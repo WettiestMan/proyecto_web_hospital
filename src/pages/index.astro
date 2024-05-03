@@ -21,8 +21,8 @@ let images: ImageInfo[] = [new ImageInfo("../public/img/icons/slide1.jpg", "Serv
 
 <Layout title="Centro Medico | Policlinico La Trinidad">
 	<main>
-		<section class="slideshowSection">
-			<div class="slideshowContainer max-w-[500px] relative m-auto">
+		<section>
+			<div class="slideshowContainer max-w-3xl aspect-square relative m-auto">
 				<div class="slideshowImage object-cover">
 					<!-- div class="slideshowPosIndicator">1 / 4</div -->
 					<img class="w-full" src={images[0].source} alt={images[0].alternative}/>
@@ -47,8 +47,8 @@ let images: ImageInfo[] = [new ImageInfo("../public/img/icons/slide1.jpg", "Serv
 		
 					function displaySelectedSlide(slideNumber: number){
 						let i: number;
-						const slides = document.getElementsByClassName("slideshowImage");
-						const dots = document.getElementsByClassName("dotControl");
+						const slides: HTMLCollectionOf<Element> = document.getElementsByClassName("slideshowImage");
+						const dots: HTMLCollectionOf<Element> = document.getElementsByClassName("dotControl");
 					
 						if(slideNumber > slides.length) {slideIndex = 1}
 						if(slideNumber < 1) {slideIndex = slides.length}
@@ -98,5 +98,20 @@ let images: ImageInfo[] = [new ImageInfo("../public/img/icons/slide1.jpg", "Serv
 				<span class="dotControl cursor-pointer h-3.5 w-3.5 my-0 mx-0.5 bg-[#BBBBBB] rounded-full inline-block transition-colors duration-600 ease-linear hover:bg-[#717171]" id="dotFourth"></span>
 			</div>
 		</section>
+		<!-- <section class="flex flex-column md:flex-row h-fit bg-steel_blue-200"> -->
+			<!-- <article class="flex flex-column md:flex-row"> -->
+				<!-- <div> -->
+					<!-- <h2 class="text-center">Ubícanos</h2> -->
+					<!-- <p>Av. La Unión 612 - Mz 35 - Lt. G.P.P.J.J.<br></p> -->
+					<!-- <p>Inca Pachacutec - V.M.T - Lima - Lima</p> -->
+				<!-- </div> -->
+				<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2757.7636660113094!2d-76.94981591403894!3d-12.175856881966752!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b91c7eaa4d59%3A0x2446918179d18056!2sPoliclinico%20LA%20TRINIDAD!5e0!3m2!1ses!2sus!4v1714710357696!5m2!1ses!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="p-4 w-[400px] h-[400px]"></iframe> -->
+			<!-- </article> -->
+			<!-- <article class="w-full h-full flex flex column py-auto"> -->
+				<!-- <button class="btn hover:animate-pop mx-4 hidden md:block border border-white rounded-full font-bold py-3 px-5 hover: bg-mint_green-100 text-steel_blue-900"></button> -->
+				<!-- <button class="btn hover:animate-pop mx-4 hidden md:block border border-white rounded-full font-bold py-3 px-5 hover: bg-mint_green-100 text-steel_blue-900"></button> -->
+				<!-- <button class="btn hover:animate-pop mx-4 hidden md:block border border-white rounded-full font-bold py-3 px-5 hover: bg-mint_green-100 text-steel_blue-900"></button> -->
+			<!-- </article> -->
+		<!-- </section> -->
 	</main>
 </Layout>
