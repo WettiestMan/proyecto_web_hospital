@@ -3,5 +3,89 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout title="">
-    <h1>Pagina de servicios</h1>
+    <h1>Servicios Generales</h1>
+    <section class="Contenedor flex">
+        <div class="Columna1">
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/medicinageneral.png" style="width:68px">Medicina General</a>
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/medicinainterna.png" width="78px">Medicina Interna</a>
+            <a class="Boton" href="https://www.google.com/">
+                <img src="Imagenes-Iconos/medicinafamiliar.png" width="70px">Medicina Familiar</a>
+        </div>                                                                  
+        <div class="Columna2">
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/pediatria.png" width="90px">Pediatría</a>
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/ginecologia.png" width="80px">Ginecología</a>
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/cardiologia.png" width="80px">Cardiología</a>
+        </div>
+        <div class="Columna3">
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/odontologia.png" width="80px">Odontología</a>
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/oftalmologia.png" width="80px">Oftalmología</a>
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/gastroenterologia.png" width="80px">Gastroenterología</a>
+        </div>
+        <div class="Columna4">
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/topico.png" width="90px">Tópico</a>
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/laboratorio.png" width="80px">Laboratorio</a>
+            <a class="Boton" href="https://www.google.com/">
+            <img src="Imagenes-Iconos/farmacia.png" width="80px">Farmacia</a>
+        </div>
+    </section>
 </Layout>
+<style>
+    @media (max-width: 400px){
+        .Columna1{
+            width: 46%;
+        }
+    }
+    @media (max-width: 400px){
+        .Boton{
+            width: 100%;
+        }
+    }
+    .flex{
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .Contenedor{
+        width: 100%;
+        margin-left: 0 auto;
+        margin-right: 1px;
+        margin-top: 200px;
+    }
+    .Columna{
+        width:100%;
+        padding: 2px; 
+    }
+    .Boton{
+        display:block;
+        /*Largo Boton*/
+        width: 135px;
+        height: 95px;
+        /*Color Boton*/
+        background-color:#EDBD5E;
+        /*Bordes*/
+        border-radius: 19px;
+        /*Tamaño del boton*/
+        padding: 22px 15px;
+        /*Lugar de la página Espacion entre botones*/
+        margin: 15px 15px;
+        /*Texto*/
+        text-decoration: none;
+        color: black;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 550;
+        cursor: pointer;
+        text-align:center;
+    }
+    .Boton:hover{
+        background: #E19D4F;
+    }
+</style>

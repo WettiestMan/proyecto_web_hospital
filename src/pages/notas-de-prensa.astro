@@ -2,6 +2,56 @@
 import Layout from "../layouts/Layout.astro"
 ---
 
-<Layout title="">
-    <h1>Pagina notas de prensa</h1>
+<Layout title="xd">
+    <div class="cont">
+        <div class="caj">
+            <img src="img/icons/ad849b_3200d2ab20a745caa817823cb4558c6b~mv2.png" alt="">
+        </div>
+        <div class="caj">
+            <img src="img/icons/ad849b_7cbfc3550de44513875bd17d1d149c32~mv2.png" alt="">
+        </div>
+        <div class="caj">
+            <img src="img/icons/ad849b_931d5389c1ff41b3bc2046adb7067eaa~mv2.png" alt="">
+        </div>
+        <div class="caj">
+            <img src="img/icons/Captura de pantalla 2024-05-02 182923.png" alt="">
+        </div>
+        <div class="caj">
+            <img src="img/icons/Captura de pantalla 2024-05-02 182943.png" alt="">
+        </div>
+        <div class="caj">
+            <img src="img/icons/Captura de pantalla 2024-05-02 183010.png" alt="">
+        </div>
+        <div class="caj">
+            <img src="img/icons/Captura de pantalla 2024-05-02 183135.png" alt="">
+        </div>
+    </div>
 </Layout>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .cont{
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 250px;
+        grid-gap: 20px;
+    }
+
+    .caj img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        box-shadow: .3rem .3rem .3rem rgb(70, 50, 20);
+    }
+
+    .caj:nth-child(7){
+        grid-column: span 2;
+    }
+</style>
