@@ -33,12 +33,25 @@ import Layout from "../layouts/Layout.astro"
             <p class="text-pretty text-center leading-10">Queremos ser los referentes de salud de nuestra población, aportando calidad, confianza y seguridad en nuestros servicios de salud con un enfoque humanizado y comprometido con el bienestar de la población</p>
         </article>
     </main>
-    <footer class="mx-auto text-white max-w-6xl flex flex-col md:flex-row bg-[#413423] rounded-xl hover:shadow-2xl">
+    <footer class="mx-auto text-white max-w-6xl flex flex-col md:flex-row bg-[#413423] rounded-xl hover:shadow-2xl mb-4">
         <img src="/public/img/icons/main-icon.webp" alt="" class="hidden md:block rounded-t-xl aspect-video md:aspect-square md:rounded-l-xl md:rounded-none">
         <p class="px-8 py-4 content-center leading-10 text-pretty text-xl text-outer_space-900">Cuando Jesús confía a los apóstoles la misión de llevar el Evangelio de la salud-salvación hasta los confines del mundo, les manda curar a los enfermos como un signo inequívoco de la presencia del Reino de Dios. Jesús reunió a los Doce y les dio autoridad para expulsar a todos los malos espíritus y poder para curar enfermedades. Después los envió a anunciar el Reino de Dios y a curar (Lc 9, 1-2).</p>
     </footer>
+    <section class=" bg-[#EDBB5E] rounded max-w-3xl mx-auto pt-5 pb-3 px-10 text-center">
+        <span class="uppercase font-extrabold text-3xl">Solicitud de Cita</span>
+        <p class="mx-4 md:mx-10 text-pretty mb-5">
+            Llámenos al 281-0594 o complete el siguiente formulario y uno de nuestros empleados se comunicará con usted para confirmar una cita
+        </p>
+        <input class="w-full mb-4 h-10 pl-3" type="text" name="Nombres" id="Nombres" placeholder="Ingrese su nombre">
+        <input class="w-full mb-4 h-10 pl-3" type="text" name="Apellidos" id="Apellidos" placeholder="Ingrese su apellido">
+        <input class="w-full mb-4 h-10 pl-3" type="text" name="Telefono" id="Telefono" placeholder="Ingrese su telefono">
+        <input class="w-full mb-4 h-10 pl-3" type="email" name="Correo" id="Correo" placeholder="Ingrese su Correo">
+        <textarea class="w-full mb-4 h-40 p-3" name="Mensaje" id="Mensaje" placeholder="Escribe tu mensaje aqui"></textarea>
+        <input class=" bg-[#3d311f] w-40 text-white p-1 text-xl" type="submit" value="Enviar">
+    </section>
 
     <!--Version con CSS -->
+    
     <!-- <header>
         <h1>Nosotros</h1>
     </header>
@@ -73,7 +86,7 @@ import Layout from "../layouts/Layout.astro"
         <img src="/public/img/icons/main-icon.webp" alt="" class=" trinidad">
         <p class="versiculo">Cuando Jesús confía a los apóstoles la misión de llevar el Evangelio de la salud-salvación hasta los confines del mundo, les manda curar a los enfermos como un signo inequívoco de la presencia del Reino de Dios. Jesús reunió a los Doce y les dio autoridad para expulsar a todos los malos espíritus y poder para curar enfermedades. Después los envió a anunciar el Reino de Dios y a curar (Lc 9, 1-2).</p>
     </footer> -->
-    <section class="form-Datos">
+    <!-- <section class="form-Datos">
         <h4>Solcitud de Cita</h4>
         <h5>
             Llámenos al 281-0594 O complete el siguiente formulario y uno de nuestros empleados se comunicará con usted para confirmar una cita
@@ -84,11 +97,10 @@ import Layout from "../layouts/Layout.astro"
         <input class="ctn" type="email" name="Correo" id="Correo" placeholder="Ingrese su Correo">
         <textarea class="ctn" name="Mensaje" id="Mensaje" placeholder="Escribe tu mensaje aqui"></textarea>
         <input class="btn" type="submit" value="Enviar">
-    </section>
+    </section> -->
 </Layout>
-
-<style>
-    /* header{
+<!-- <style>
+    header{
         display: flex;
         justify-content: center;
         margin-bottom: 1rem;
@@ -195,7 +207,7 @@ import Layout from "../layouts/Layout.astro"
         .item01, .item02, .item03, .item04, .item05, .item06, .item07{
             grid-column: 1;
         }
-    } */
+    }
     .form-Datos{
         width: 800px;
         background: #EDBB5E;
@@ -250,4 +262,4 @@ import Layout from "../layouts/Layout.astro"
         margin: 16px 0;
         font-size: 16px;
     }
-</style>
+</style> -->
