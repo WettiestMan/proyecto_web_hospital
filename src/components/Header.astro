@@ -1,47 +1,44 @@
 ---
 
 ---
-
-<header class=" bg-[#F0974E] text-white fixed top-0 w-full justify-center bg-opacity-90 backdrop-blur-sm z-[1000]">
-    <div class="flex justify-between items-center py-2 w-svw px-4">
-        <a class="flex items-center" href="./"> 
-            <img class="icon mr-4 aspect-square rounded-full h-24" src="/public/img/icons/main-icon.webp" alt="xd">
-            <span class=" titulo  text-ice_blue-900 uppercase font-black text-xl w-fit">Centro médico<br>La trinidad</span>
-        </a>
-        <nav class="navBody hidden md:flex items-center uppercase font-semibold">
-            <a class="navItem text-ice_blue-900 mr-4 p-2 rounded-xl hover:bg-steel_blue-900 hover:bg-opacity-30 text-center" href="./">Inicio</a>
-            <a class="navItem text-ice_blue-900 mr-4 p-2 rounded-xl hover:bg-steel_blue-900 hover:bg-opacity-30 text-center" href="./nosotros">Nosotros</a>
-            <a class="navItem text-ice_blue-900 mr-4 p-2 rounded-xl hover:bg-steel_blue-900 hover:bg-opacity-30 text-center" href="./servicios">Servicios</a>
-            <a class="navItem text-ice_blue-900 p-2 rounded-xl hover:bg-steel_blue-900 hover:bg-opacity-30 text-center" href="./notas-de-prensa">Notas</a>
-        </nav>
-        <button class="btn bg-[#FE914C] hover:animate-pop ml-4 hidden md:block border border-white rounded-full font-bold py-3 px-5">Contactanos</button>
-        <button class="hover:animate-pop md:hidden flex items-center border border-white rounded-full font-bold py-2 px-4 hover:bg-mint_green-100 text-steel_blue-900">
-            <svg class="h-5 w-5 fill-current mr-2" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-            </svg>
-            <span>Menú</span>
-        </button>
-    </div>
+<input type="checkbox" id="sidebar" class="hidden">
+<label for="sidebar" class="open fixed hover:bg-white hover:scale-110 ease-in-out duration-300 hover:bg-opacity-10 p-2 rounded-md right-8 md:right-12 top-8 z-30 lg:hidden">
+    <img src="/public/img/Header/menu.svg" alt="">
+</label>
+<label for="sidebar" class="close fixed hover:bg-white hover:scale-110 ease-in-out duration-300 hover:bg-opacity-10 p-2 rounded-md right-8 md:right-12 top-8 z-30 hidden">
+    <img src="/public/img/Header/close.svg" alt="">
+</label>
+<nav class="lateral fixed right-0 top-28 z-20 w-full md:w-64 bg-orange-950 bg-opacity-10 backdrop-blur-sm shadow-md rounded-2xl hidden">
+    <ul class="flex flex-col gap-6 m-6 text-center">
+        <li><a class="block text-xl md:text-2xl hover:text-orange-400 py-2 rounded-xl hover:bg-opacity-10 hover:bg-white" href="./">Inicio</a></li>
+        <li><a class="block text-xl md:text-2xl hover:text-orange-400 py-2 rounded-xl hover:bg-opacity-10 hover:bg-white" href="./servicios">Servicios</a></li>
+        <li><a class="block text-xl md:text-2xl hover:text-orange-400 py-2 rounded-xl hover:bg-opacity-10 hover:bg-white" href="./nosotros">Nosotros</a></li>
+        <li><a class="block text-xl md:text-2xl hover:text-orange-400 py-2 rounded-xl hover:bg-opacity-10 hover:bg-white" href="./notas-de-prensa">Contactanos</a></li>
+    </ul>
+</nav>
+<header class="fixed flex w-full justify-between z-10 top-0 px-8 md:px-12 py-3 items-center bg-orange-950 bg-opacity-10 backdrop-blur-sm shadow-md">
+    <a href="./" class="flex items-center">
+        <img src="/public/img/Header/main-icon.webp" alt="" class="rounded-full aspect-square h-20"/>
+        <span class="ml-4 text-xl font-semibold">Centro medico<br>La Trinidad</span>
+    </a>
+    <nav class="hidden lg:block">
+        <ul class="flex gap-4">
+            <li><a class="block hover:scale-110 ease-in-out duration-300 text-xl hover:text-orange-400 py-2 px-5 rounded-xl hover:bg-opacity-10 hover:bg-white" href="./">Inicio</a></li>
+            <li><a class="block hover:scale-110 ease-in-out duration-300 text-xl hover:text-orange-400 py-2 px-5 rounded-xl hover:bg-opacity-10 hover:bg-white" href="./servicios">Servicios</a></li>
+            <!-- <li><a class="block hover:scale-110 ease-in-out duration-300 text-xl hover:text-orange-400 py-2 px-5 rounded-xl hover:bg-opacity-10 hover:bg-white" href="./contactanos">Contactanos</a></li> -->
+            <li><a class="block hover:scale-110 ease-in-out duration-300 text-xl hover:text-orange-400 py-2 px-5 rounded-xl hover:bg-opacity-10 hover:bg-white" href="./nosotros">Nosotros</a></li>
+            <li><a class="block hover:scale-110 ease-in-out duration-300 text-xl hover:text-orange-400 py-2 px-5 rounded-xl hover:bg-opacity-10 hover:bg-white" href="./notas-de-prensa">Contactanos</a></li>
+        </ul>
+    </nav>
 </header>
 <style>
-    @media only screen and (max-width: 1000px) {
-        .icon{
-            height: 4rem;
-        }
-        .titulo{
-            font-size: 0.75rem;
-            line-height: 1rem;
-            width: 10rem;
-        }
-        .navItem{
-            font-size:.9rem;
-        }
-        .btn{
-            font-weight: 400;
-            padding: 0.3rem 1rem 0.3rem 1rem;
-        }
-        .navBody{
-            font-weight: 400;
-        }
+    #sidebar:checked ~ .lateral{
+        display: block;
+    }
+    #sidebar:checked ~ .open{
+        display: none;
+    }
+    #sidebar:checked ~ .close{
+        display: block;
     }
 </style>

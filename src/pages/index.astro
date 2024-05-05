@@ -11,14 +11,11 @@ class ImageInfo{
 		this.alternative = alternative;
 	}
 }
-
-let images: ImageInfo[] = [new ImageInfo("../public/img/icons/slide1.jpg", "Servicio de pediatría por Dra. Melissa Herrera: Jueves 2 de mayo"),
-          new ImageInfo("../public/img/icons/slide2.jpg", "Servicio de psiquiatría por Dr. Henry Quispe Wong: Sábado 18 de mayo"),
-		  new ImageInfo("../public/img/icons/slide3.jpg", "Control de diabetes con Lic. Maria Luyo Muchotrigo: Viernes 26 de abril"), 
-		  new ImageInfo("../public/img/icons/slide4.jpg", "Control de crecimiento y desarrollo con Lic. Silvana Hernández: Miércoles 24 de abril")];
-
+let images: ImageInfo[] = [new ImageInfo("../public/img/Inicio/slide1.jpg", "Servicio de pediatría por Dra. Melissa Herrera: Jueves 2 de mayo"),
+          new ImageInfo("../public/img/Inicio/slide2.jpg", "Servicio de psiquiatría por Dr. Henry Quispe Wong: Sábado 18 de mayo"),
+		  new ImageInfo("../public/img/Inicio/slide3.jpg", "Control de diabetes con Lic. Maria Luyo Muchotrigo: Viernes 26 de abril"), 
+		  new ImageInfo("../public/img/Inicio/slide4.jpg", "Control de crecimiento y desarrollo con Lic. Silvana Hernández: Miércoles 24 de abril")];
 ---
-
 <Layout title="Centro Medico | Policlinico La Trinidad">
 	<main>
 		<section>
@@ -39,48 +36,36 @@ let images: ImageInfo[] = [new ImageInfo("../public/img/icons/slide1.jpg", "Serv
 					<!-- div class="slideshowPosIndicator">4 / 4</div -->
 					<img class="w-full" src={images[3].source} alt={images[3].alternative}/>
 				</div>
-
 				<script>
 					let slideIndex = 1;
-
 					displaySelectedSlide(slideIndex);
-		
 					function displaySelectedSlide(slideNumber: number){
 						let i: number;
 						const slides: HTMLCollectionOf<Element> = document.getElementsByClassName("slideshowImage");
 						const dots: HTMLCollectionOf<Element> = document.getElementsByClassName("dotControl");
-					
 						if(slideNumber > slides.length) {slideIndex = 1}
 						if(slideNumber < 1) {slideIndex = slides.length}
-					
 						for(i = 0; i < slides.length; i++){
 							slides[i].classList.add("hidden");
 						}
-					
 						for(i = 0; i < dots.length; i++){
 							dots[i].classList.replace("bg-[#717171]","bg-[#BBBBBB]");
 						}
-					
 						slides[slideIndex - 1].classList.remove("hidden");
 						dots[slideIndex - 1].classList.replace("bg-[#BBBBBB]","bg-[#717171]");
 					}
-					
 					function slideMoveForward(){
 						displaySelectedSlide(slideIndex+=1);
 					}
-
 					function slideMoveBackward(){
 						displaySelectedSlide(slideIndex-=1);
 					}
-					
 					function currentSlide(n: number){
 						displaySelectedSlide(slideIndex = n);
 					}
-
 					// Configuración de botones
 					document.getElementById("moveForward")?.addEventListener("click", slideMoveForward);
 					document.getElementById("moveBackward")?.addEventListener("click", slideMoveBackward);
-
 					// Configuración de puntos de navegación
 					document.getElementById("dotFirst")?.addEventListener("click", function(){currentSlide(1)});
 					document.getElementById("dotSecond")?.addEventListener("click", function(){currentSlide(2)});
@@ -90,7 +75,6 @@ let images: ImageInfo[] = [new ImageInfo("../public/img/icons/slide1.jpg", "Serv
 				<a class="cursor-pointer absolute top-2/4 w-auto -mt-[22px] p-4 font-bold text-[18px] max-w-[300px]:text-[11px] transition duration-600 ease-linear select-none rounded-md hover:bg-[rgba(0,0,0,0.8)]" id="moveBackward">&#10096;</a>
 				<a class="cursor-pointer absolute top-2/4 w-auto -mt-[22px] p-4 font-bold text-[18px] max-w-[300px]:text-[11px] transition duration-600 ease-linear select-none rounded-md hover:bg-[rgba(0,0,0,0.8)] right-0" id="moveForward">&#10097;</a>
 			</div>
-
 			<div class="text-center">
 				<span class="dotControl cursor-pointer h-3.5 w-3.5 my-0 mx-0.5 bg-[#BBBBBB] rounded-full inline-block transition-colors duration-600 ease-linear hover:bg-[#717171]" id="dotFirst"></span>
 				<span class="dotControl cursor-pointer h-3.5 w-3.5 my-0 mx-0.5 bg-[#BBBBBB] rounded-full inline-block transition-colors duration-600 ease-linear hover:bg-[#717171]" id="dotSecond"></span>
