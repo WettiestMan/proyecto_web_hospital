@@ -1,0 +1,11 @@
+---
+interface Props{
+    href: string;
+    alt: string;
+}
+const {href, alt}=Astro.props;
+---
+<a class=" block bg-[#EDBD5E] hover:bg-[#E19D4F] aspect-square rounded-xl p-2" href={`./servicios/${href}`}>
+    <img loading="lazy" class="" src={`/public/img/Servicios/${href}.png`} alt={alt}>
+    <h2 class="mt-2 text-center uppercase text-black font-semibold">{href}</h2>
+</a>
