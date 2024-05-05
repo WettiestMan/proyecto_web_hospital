@@ -2,13 +2,12 @@
 import Layout from "../layouts/Layout.astro"
 ---
 <Layout title="Policlinico La Trinidad | Nosotros">
-    <!--Version con Tailwind -->
     <header class="flex justify-center mb-8">
         <h1 class=" text-[#413423] w-fit font-black uppercase text-6xl md:text-8xl">Nosotros</h1>
     </header>
     <main class="mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-5">
         <article class="hover:shadow-2xl">
-            <img class="rounded-xl h-full w-full object-cover" src="/public/img/imgNosotros/image01.png" alt="">
+            <img class="rounded-xl h-full w-full object-cover" src="/public/img/Nosotros/image01.png" alt="">
         </article>
         <article class="content-center w-full p-4 bg-[#eb882b] rounded-xl md:col-span-2">
             <h2 class="uppercase font-extrabold text-4xl text-center md:text-2xl md:text-left">¿Quienes somos?</h2>
@@ -19,10 +18,10 @@ import Layout from "../layouts/Layout.astro"
             <p class="text-center text-pretty leading-10">Servicios de Salud con Especialidades Médicas. Servicios de apoyo al diagnostico como Laboratorio, Electrocardiograma, Ecografias. Terapias de Lenguaje, Aprendizaje, Física. Evaluaciones en Psicología. Programa de Diabéticos e Hipertensos. Tratamiento de pie diabetico, Ulceras vericosas. Odontología. Podología. Farmacia. Tenemos 26 años de experiencia al servicio del pueblo.</p>
         </article>
         <article class="row-span-2 col-span-1 md:col-span-2 hover:shadow-2xl ">
-            <img class="rounded-xl h-full w-full object-cover" src="/public/img/imgNosotros/image03.png" alt="">
+            <img class="rounded-xl h-full w-full object-cover" src="/public/img/Nosotros/image03.png" alt="">
         </article>
         <article class="hover:shadow-2xl">
-            <img class=" h-full w-full rounded-xl object-cover" src="/public/img/imgNosotros/image02.png" alt="">
+            <img class=" h-full w-full rounded-xl object-cover" src="/public/img/Nosotros/image02.png" alt="">
         </article>
         <article class="content-center w-full p-4 bg-[#eb882b] rounded-xl">
             <h2 class="uppercase font-extrabold text-4xl text-center md:text-2xl">Misión</h2>
@@ -33,11 +32,11 @@ import Layout from "../layouts/Layout.astro"
             <p class="text-pretty text-center leading-10">Queremos ser los referentes de salud de nuestra población, aportando calidad, confianza y seguridad en nuestros servicios de salud con un enfoque humanizado y comprometido con el bienestar de la población</p>
         </article>
     </main>
-    <footer class="mx-auto text-white max-w-6xl flex flex-col md:flex-row bg-[#413423] rounded-xl hover:shadow-2xl mb-4">
-        <img src="/public/img/icons/main-icon.webp" alt="" class="hidden md:block rounded-t-xl aspect-video md:aspect-square md:rounded-l-xl md:rounded-none">
-        <p class="px-8 py-4 content-center leading-10 text-pretty text-xl text-outer_space-900">Cuando Jesús confía a los apóstoles la misión de llevar el Evangelio de la salud-salvación hasta los confines del mundo, les manda curar a los enfermos como un signo inequívoco de la presencia del Reino de Dios. Jesús reunió a los Doce y les dio autoridad para expulsar a todos los malos espíritus y poder para curar enfermedades. Después los envió a anunciar el Reino de Dios y a curar (Lc 9, 1-2).</p>
-    </footer>
-    <section class=" bg-[#EDBB5E] rounded max-w-3xl mx-auto pt-5 pb-3 px-10 text-center">
+    <section class="mx-auto text-white max-w-6xl flex flex-col md:flex-row bg-[#413423] rounded-xl hover:shadow-2xl mb-4">
+        <img src="/public/img/Header/main-icon.webp" alt="" class="hidden md:block rounded-t-xl aspect-video md:aspect-square md:rounded-l-xl md:rounded-none">
+        <p class="px-8 py-4 content-center leading-7 lg:leading-10 text-pretty">Cuando Jesús confía a los apóstoles la misión de llevar el Evangelio de la salud-salvación hasta los confines del mundo, les manda curar a los enfermos como un signo inequívoco de la presencia del Reino de Dios. Jesús reunió a los Doce y les dio autoridad para expulsar a todos los malos espíritus y poder para curar enfermedades. Después los envió a anunciar el Reino de Dios y a curar (Lc 9, 1-2).</p>
+    </section>
+    <section class=" bg-[#EDBB5E] rounded max-w-3xl mx-auto pt-5 pb-3 px-10 text-center mb-10">
         <span class="uppercase font-extrabold text-3xl">Solicitud de Cita</span>
         <p class="mx-4 md:mx-10 text-pretty mb-5">
             Llámenos al 281-0594 o complete el siguiente formulario y uno de nuestros empleados se comunicará con usted para confirmar una cita
@@ -47,219 +46,6 @@ import Layout from "../layouts/Layout.astro"
         <input class="w-full mb-4 h-10 pl-3" type="text" name="Telefono" id="Telefono" placeholder="Ingrese su telefono">
         <input class="w-full mb-4 h-10 pl-3" type="email" name="Correo" id="Correo" placeholder="Ingrese su Correo">
         <textarea class="w-full mb-4 h-40 p-3" name="Mensaje" id="Mensaje" placeholder="Escribe tu mensaje aqui"></textarea>
-        <button type="submit" class="bg-[#3d311f] w-48 p-1 text-xl">Enviar</button>
+        <button type="submit" class="text-white bg-[#3d311f] w-48 p-1 text-xl">Enviar</button>
     </section>
-
-    <!--Version con CSS -->
-    
-    <!-- <header>
-        <h1>Nosotros</h1>
-    </header>
-    <main>
-        <article class="item01">
-            <img class="grid_img" src="/public/img/imgNosotros/image01.png" alt="">
-        </article>
-        <article class="item02">
-            <h2>¿Quienes somos?</h2>
-            <p>Somos un Centro Medico Parroquial con la misión de satisfacer las necesidades de salud de nuestra población de Villa María del Triunfo y distritos aledaños, ofreciéndoles servicios de atención primaria y comunitaria con calidad y eficiencia</p>
-        </article>
-        <article class="item03">
-            <h2>Nuestra historia</h2>
-            <p>Servicios de Salud con Especialidades Médicas. Servicios de apoyo al diagnostico como Laboratorio, Electrocardiograma, Ecografias. Terapias de Lenguaje, Aprendizaje, Física. Evaluaciones en Psicología. Programa de Diabéticos e Hipertensos. Tratamiento de pie diabetico, Ulceras vericosas. Odontología. Podología. Farmacia. Tenemos 26 años de experiencia al servicio del pueblo.</p>
-        </article>
-        <article class="item04">
-            <img class="grid_img" src="/public/img/imgNosotros/image03.png" alt="">
-        </article>
-        <article class="item05">
-            <img class="grid_img" src="/public/img/imgNosotros/image02.png" alt="">
-        </article>
-        <article class="item06">
-            <h2>Misión</h2>
-            <p>Nuestra misión es la de satisfacer las necesidades de salud de nuestra población, ofreciendo servicios de atención primaria y comunitaria con un equipo calificado y guidos por los valores de calidad, compromizo y trabajo en equipo</p>
-        </article>
-        <article class="item07">
-            <h2>Visión</h2>
-            <p>Queremos ser los referentes de salud de nuestra población, aportando calidad, confianza y seguridad en nuestros servicios de salud con un enfoque humanizado y comprometido con el bienestar de la población</p>
-        </article>
-    </main>
-    <footer>
-        <img src="/public/img/icons/main-icon.webp" alt="" class=" trinidad">
-        <p class="versiculo">Cuando Jesús confía a los apóstoles la misión de llevar el Evangelio de la salud-salvación hasta los confines del mundo, les manda curar a los enfermos como un signo inequívoco de la presencia del Reino de Dios. Jesús reunió a los Doce y les dio autoridad para expulsar a todos los malos espíritus y poder para curar enfermedades. Después los envió a anunciar el Reino de Dios y a curar (Lc 9, 1-2).</p>
-    </footer> -->
-    <!-- <section class="form-Datos">
-        <h4>Solcitud de Cita</h4>
-        <h5>
-            Llámenos al 281-0594 O complete el siguiente formulario y uno de nuestros empleados se comunicará con usted para confirmar una cita
-        </h5>
-        <input class="ctn" type="text" name="Nombres" id="Nombres" placeholder="Ingrese su nombre">
-        <input class="ctn" type="text" name="Apellidos" id="Apellidos" placeholder="Ingrese su apellido">
-        <input class="ctn" type="text" name="Telefono" id="Telefono" placeholder="Ingrese su telefono">
-        <input class="ctn" type="email" name="Correo" id="Correo" placeholder="Ingrese su Correo">
-        <textarea class="ctn" name="Mensaje" id="Mensaje" placeholder="Escribe tu mensaje aqui"></textarea>
-        <input class="btn" type="submit" value="Enviar">
-    </section> -->
 </Layout>
-<!-- <style>
-    header{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1rem;
-    }
-    h1{
-        width: fit-content;
-        font-weight: 900;
-        text-transform: uppercase;
-        font-size: 6rem;
-    }
-    h2{
-        text-transform: uppercase;
-        font-weight: 800;
-        text-align: center;
-        font-size: 1.5rem;
-        line-height: 2rem;
-    }
-    p{
-        text-wrap: pretty;
-        text-align: center;
-        line-height: 2.5rem;
-    }
-    main{
-        color: rgb(236 252 250);
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1.25rem;
-        display: grid;
-        gap: 1rem;
-        max-width: 72rem;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    .grid_img{
-        border-radius: .75rem;
-        object-fit: cover;
-        height: 100%;
-    }
-    .item02, .item03, .item06, .item07{
-        align-content: center;
-        width: 100%;
-        padding: 1rem;
-        background-color: rgb(31 49 68);
-        border-radius: .75rem;
-    }
-    .item02{
-        grid-column: span 2;
-    }
-    .item03{
-        grid-row: span 2;
-    }
-    .item04{
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-    .
-    .item01:hover, .item04:hover, .item05:hover{
-        --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-        --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    }
-    footer{
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 72rem;
-        display: flex;
-        flex-direction: row;
-        background-color: rgb(28 56 54);
-        border-radius: .75rem;
-    }
-    .trinidad{
-        border-top-left-radius: 0.75rem;
-        border-bottom-left-radius: 0.75rem;
-        aspect-ratio: 1/1;
-        display: block;
-    }
-    .versiculo{
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        align-content: center;
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        color: rgb(213 219 221);
-    }
-    @media (max-width: 768px) {
-        h1{
-            font-size: 3.75rem;
-            line-height: 1;
-        }
-        h2{
-            font-size: 2.25rem;
-            line-height: 2.5rem;
-        }
-        main{
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-        }
-        footer{
-            flex-direction: column;
-        }
-        .trinidad{
-            display: none;
-        }
-        .item01, .item02, .item03, .item04, .item05, .item06, .item07{
-            grid-column: 1;
-        }
-    }
-    .form-Datos{
-        width: 800px;
-        background: #EDBB5E;
-        padding: 30px;
-        margin: auto;
-        margin-top: 100px;
-        border-radius: 4px;
-        font-family: 'calibri';
-        color: 675439;
-        box-shadow: 12px 18px 37px #000;
-
-    }
-
-    .form-Datos h4{
-        font-size: 22px;
-        margin-bottom: 20px;
-    }
-    .form-Datos h5{
-        font-size: 15px;
-        margin-bottom: 20px;
-    }
-    .ctn{
-        width: 100%;
-        background: 24303c;
-        padding: 10px;
-        border-radius: 4px;
-        margin-bottom: 16px;
-        border: 1px solid #f6f6f6;
-        font-family: 'calibri';
-        font-size: 18px;
-        
-    }
-
-    .form-Datos p {
-        height: 40px;
-        text-align: center;
-        font-size: 18px;
-
-    }
-
-    .form-Datos a:hover {
-        color: white;
-        text-decoration: underline;
-
-    }
-    .form-Datos .btn{
-        width: 100%;
-        background: #3d311f;
-        border: none;
-        padding: 12px;
-        color: white;
-        margin: 16px 0;
-        font-size: 16px;
-    }
-</style> -->
