@@ -3,10 +3,10 @@ import Layout from "../layouts/Layout.astro"
 ---
 <Layout title="Policlinico La Trinidad | Nosotros">
     <!--Version con Tailwind -->
-    <header class="flex justify-center mb-4">
+    <header class="flex justify-center mb-8">
         <h1 class=" text-[#413423] w-fit font-black uppercase text-6xl md:text-8xl">Nosotros</h1>
     </header>
-    <main class="mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-5 text-ice_blue-900">
+    <main class="mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-5">
         <article class="hover:shadow-2xl">
             <img class="rounded-xl h-full w-full object-cover" src="/public/img/imgNosotros/image01.png" alt="">
         </article>
@@ -47,7 +47,7 @@ import Layout from "../layouts/Layout.astro"
         <input class="w-full mb-4 h-10 pl-3" type="text" name="Telefono" id="Telefono" placeholder="Ingrese su telefono">
         <input class="w-full mb-4 h-10 pl-3" type="email" name="Correo" id="Correo" placeholder="Ingrese su Correo">
         <textarea class="w-full mb-4 h-40 p-3" name="Mensaje" id="Mensaje" placeholder="Escribe tu mensaje aqui"></textarea>
-        <input class=" bg-[#3d311f] w-40 text-white p-1 text-xl" type="submit" value="Enviar">
+        <button type="submit" class="bg-[#3d311f] w-48 p-1 text-xl">Enviar</button>
     </section>
 
     <!--Version con CSS -->
