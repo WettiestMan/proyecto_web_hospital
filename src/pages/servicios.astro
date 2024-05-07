@@ -1,60 +1,35 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import BotonServicios from "../components/BotonServicios.astro"
+import BotonServicios from "../components/Servicios/BotonServicios.astro"
 ---
-
-<Layout title="xd">
-    <header class="flex justify-center mb-8">
-        <h1 class=" text-[#413423] w-fit font-black uppercase text-3xl md:text-5xl lg:text-6xl">Servicios Generales</h1>
+<Layout title="Policlinico La Trinidad | Servicios">
+    <header class="flex flex-col md:flex-row bg-orange-300 p-5 rounded-xl mb-8 max-w-7xl mx-auto gap-4">
+        <section class="content-center basis-4/5 lg:basis-2/5">
+            <h1 class="font-black uppercase text-2xl lg:text-5xl mb-5 text-center md:text-left">Nuestros Servicios</h1>
+            <p class="text-pretty">Contamos con un equipo de profesionales con años de experiencia que brindan un sistema de salud integral, dando al paciente atencio inmediata brindando asi una experiencia de calidad, en forma eficaz y orientada a la excelencia.</p>
+        </section>
+        <section class="content-center">
+            <img src="/public/img/Nosotros/image03.png" alt="" class=" object-cover rounded-xl">
+        </section>
     </header>
-    <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 text-white max-w-3xl lg:max-w-4xl mx-auto mb-10">
-            <BotonServicios 
-                href="cardiologia"
-                alt=""
-            />
-            <BotonServicios 
-                href="farmacia"
-                alt=""
-            />
-            <BotonServicios 
-                href="gastroenterologia"
-                alt=""
-            />
-            <BotonServicios 
-                href="ginecologia"
-                alt=""
-            />
-            <BotonServicios 
-                href="laboratorio"
-                alt=""
-            />
-            <BotonServicios 
-                href="medicina familiar"
-                alt=""
-            />
-            <BotonServicios 
-                href="medicina-general"
-                alt=""
-            />
-            <BotonServicios 
-                href="medicina-interna"
-                alt=""
-            />
-            <BotonServicios 
-                href="odontologia"
-                alt=""
-            />
-            <BotonServicios 
-                href="oftalmologia"
-                alt=""
-            />
-            <BotonServicios 
-                href="pediatria"
-                alt=""
-            />
-            <BotonServicios 
-                href="topico"
-                alt=""
-            />
-    </section>
+    <hr class="border-none text-transparent bg-gradient-to-r from-orange-500 h-1 mb-8 rounded-3xl"/>
+    <main>
+        <header>
+            <h2 class="text-center mb-12 font-extrabold text-4xl uppercase">Servicios Generales</h2>
+        </header>
+        <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 text-white w-fit lg:max-w-4xl mx-auto mb-10">
+            <BotonServicios href="cardiologia" alt=""/>
+            <BotonServicios href="farmacia" alt=""/>
+            <BotonServicios href="gastroenterologia" alt=""/>
+            <BotonServicios href="ginecologia" alt=""/>
+            <BotonServicios href="laboratorio" alt=""/>
+            <BotonServicios href="medicina-familiar" alt=""/>
+            <BotonServicios href="medicina-general" alt=""/>
+            <BotonServicios href="medicina-interna" alt=""/>
+            <BotonServicios href="odontologia" alt=""/>
+            <BotonServicios href="oftalmologia" alt=""/>
+            <BotonServicios href="pediatria" alt=""/>
+            <BotonServicios href="topico" alt=""/>
+        </section>
+    </main>
 </Layout>
