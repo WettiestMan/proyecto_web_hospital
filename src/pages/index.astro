@@ -38,11 +38,15 @@ let images: ImageInfo[] = [new ImageInfo("../public/img/Inicio/slide1.jpg", "Ser
 				</div>
 				<script>
 					let slideIndex = 1;
+
 					displaySelectedSlide(slideIndex);
+					setupButtons();
+
 					function displaySelectedSlide(slideNumber: number){
-						let i: number;
-						const slides: HTMLCollectionOf<Element> = document.getElementsByClassName("slideshowImage");
-						const dots: HTMLCollectionOf<Element> = document.getElementsByClassName("dotControl");
+						let i;
+						const slides = document.getElementsByClassName("slideshowImage");
+						const dots = document.getElementsByClassName("dotControl");
+
 						if(slideNumber > slides.length) {slideIndex = 1}
 						if(slideNumber < 1) {slideIndex = slides.length}
 						for(i = 0; i < slides.length; i++){
@@ -63,17 +67,25 @@ let images: ImageInfo[] = [new ImageInfo("../public/img/Inicio/slide1.jpg", "Ser
 					function currentSlide(n: number){
 						displaySelectedSlide(slideIndex = n);
 					}
-					// Configuración de botones
-					document.getElementById("moveForward")?.addEventListener("click", slideMoveForward);
-					document.getElementById("moveBackward")?.addEventListener("click", slideMoveBackward);
-					// Configuración de puntos de navegación
-					document.getElementById("dotFirst")?.addEventListener("click", function(){currentSlide(1)});
-					document.getElementById("dotSecond")?.addEventListener("click", function(){currentSlide(2)});
-					document.getElementById("dotThird")?.addEventListener("click", function(){currentSlide(3)});
-					document.getElementById("dotFourth")?.addEventListener("click", function(){currentSlide(4)});
+
+					function setupButtons() {
+						// Configuración de botones
+						document.getElementById("moveForward")?.addEventListener("click", slideMoveForward);
+						document.getElementById("moveBackward")?.addEventListener("click", slideMoveBackward);
+						// Configuración de puntos de navegación
+						document.getElementById("dotFirst")?.addEventListener("click", function(){currentSlide(1)});
+						document.getElementById("dotSecond")?.addEventListener("click", function(){currentSlide(2)});
+						document.getElementById("dotThird")?.addEventListener("click", function(){currentSlide(3)});
+						document.getElementById("dotFourth")?.addEventListener("click", function(){currentSlide(4)});
+					}
+
+					document.addEventListener("astro:page-load",() => {
+						displaySelectedSlide(slideIndex);
+						setupButtons();
+					});
 				</script>
-				<a class="cursor-pointer absolute top-2/4 w-auto -mt-[22px] p-4 font-bold text-[18px] max-w-[300px]:text-[11px] transition duration-600 ease-linear select-none rounded-md hover:bg-[rgba(0,0,0,0.8)]" id="moveBackward">&#10096;</a>
-				<a class="cursor-pointer absolute top-2/4 w-auto -mt-[22px] p-4 font-bold text-[18px] max-w-[300px]:text-[11px] transition duration-600 ease-linear select-none rounded-md hover:bg-[rgba(0,0,0,0.8)] right-0" id="moveForward">&#10097;</a>
+				<a class="cursor-pointer absolute top-2/4 w-auto -mt-[22px] p-4 font-bold text-[18px] max[300px]:text-[11px] transition duration-600 ease-linear select-none rounded-md hover:bg-[rgba(0,0,0,0.8)]" id="moveBackward">&#10096;</a>
+				<a class="cursor-pointer absolute top-2/4 w-auto -mt-[22px] p-4 font-bold text-[18px] max[300px]:text-[11px] transition duration-600 ease-linear select-none rounded-md hover:bg-[rgba(0,0,0,0.8)] right-0" id="moveForward">&#10097;</a>
 			</div>
 			<div class="text-center">
 				<span class="dotControl cursor-pointer h-3.5 w-3.5 my-0 mx-0.5 bg-[#BBBBBB] rounded-full inline-block transition-colors duration-600 ease-linear hover:bg-[#717171]" id="dotFirst"></span>
@@ -82,20 +94,41 @@ let images: ImageInfo[] = [new ImageInfo("../public/img/Inicio/slide1.jpg", "Ser
 				<span class="dotControl cursor-pointer h-3.5 w-3.5 my-0 mx-0.5 bg-[#BBBBBB] rounded-full inline-block transition-colors duration-600 ease-linear hover:bg-[#717171]" id="dotFourth"></span>
 			</div>
 		</section>
-		<!-- <section class="flex flex-column md:flex-row h-fit bg-steel_blue-200"> -->
-			<!-- <article class="flex flex-column md:flex-row"> -->
-				<!-- <div> -->
-					<!-- <h2 class="text-center">Ubícanos</h2> -->
-					<!-- <p>Av. La Unión 612 - Mz 35 - Lt. G.P.P.J.J.<br></p> -->
-					<!-- <p>Inca Pachacutec - V.M.T - Lima - Lima</p> -->
-				<!-- </div> -->
-				<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2757.7636660113094!2d-76.94981591403894!3d-12.175856881966752!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b91c7eaa4d59%3A0x2446918179d18056!2sPoliclinico%20LA%20TRINIDAD!5e0!3m2!1ses!2sus!4v1714710357696!5m2!1ses!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="p-4 w-[400px] h-[400px]"></iframe> -->
-			<!-- </article> -->
-			<!-- <article class="w-full h-full flex flex column py-auto"> -->
-				<!-- <button class="btn hover:animate-pop mx-4 hidden md:block border border-white rounded-full font-bold py-3 px-5 hover: bg-mint_green-100 text-steel_blue-900"></button> -->
-				<!-- <button class="btn hover:animate-pop mx-4 hidden md:block border border-white rounded-full font-bold py-3 px-5 hover: bg-mint_green-100 text-steel_blue-900"></button> -->
-				<!-- <button class="btn hover:animate-pop mx-4 hidden md:block border border-white rounded-full font-bold py-3 px-5 hover: bg-mint_green-100 text-steel_blue-900"></button> -->
-			<!-- </article> -->
-		<!-- </section> -->
+		<section class="grid grid-cols-1 min-[0px]:max-[639px]:grid-rows-2 sm:grid-cols-2 bg-naples_yellow-mixed w-full m-auto border-0 rounded-xl">
+			<article class="flex flex-col sm:flex-row items-center m-auto min-w[321px]:h-full max-w[320px]:w-full">
+				<div class="p-4 w-full min-[0px]:max-sm:h-fit items-center relative">
+					<h2 class="text-center font-extrabold m-4">Ubícanos</h2>
+					<p>Av. La Unión 612 - Mz 35 - Lt. G.P.P.J.J.<br></p>
+					<p>Inca Pachacutec - V.M.T - Lima - Lima</p>
+				</div>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2757.7636660113094!2d-76.94981591403894!3d-12.175856881966752!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b91c7eaa4d59%3A0x2446918179d18056!2sPoliclinico%20LA%20TRINIDAD!5e0!3m2!1ses!2sus!4v1714710357696!5m2!1ses!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="p-4 relative aspect-square w-full sm:w-2/4"></iframe>
+			</article>
+			<article class="w-full grid grid-cols-1 bg-sandy_brown items-center justify-center sm:rounded-r-xl min-[0px]:max-[639px]:rounded-b-xl">
+				<button class="btn hover:animate-pop QuickAccessButtons">Resultados de<br>laboratorio</button>
+				<button class="btn hover:animate-pop QuickAccessButtons">Notas de prensa</button>
+				<button class="btn hover:animate-pop QuickAccessButtons">Contáctanos</button>
+			</article>
+		</section>
 	</main>
 </Layout>
+<style>
+	.QuickAccessButtons{
+		background-color: #fe914c;
+		border-width: 1px;
+		border-style: solid;
+		border-radius: 9999px;
+		border-color: white;
+		font-weight: 700;
+		width: 60%;
+		height: 57%;
+		margin: 0 auto;
+		color: white;
+	}
+
+	/*@media (min-width: 640px){
+		.QuickAccessButtons{
+			width: 60%;
+			height: 57%;
+		}
+	}*/
+</style>
