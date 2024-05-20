@@ -1,30 +1,31 @@
+---
+import AnchorIcon from "./AnchorIcon.astro";
+import AnchorSimple from "./AnchorSimple.astro";
+---
 
-
-
-
-
-
-<footer class="bg-[url(/public/img/Footer/bg-footer.svg)] bg-cover bg-no-repeat pt-44 px-24 pb-8 text-center -m-16">
-    <main class="flex flex-row justify-between items-center text-left mx-12">
-        <section class="flex flex-row gap-5 items-center">
-            <img src="/public/img/Header/main-icon.webp" alt="" class=" aspect-square w-32 rounded-full">
-            <aside>
-                <img src="/public/img/Footer/facebook.svg" alt="">
-                <img src="/public/img/Footer/mail.svg" alt="">
-            </aside>
+<footer class="bg-[url(/public/img/backgrounds/bg-footer.svg)] bg-no-repeat bg-cover pt-36 -mt-16 text-center text-white pb-8">
+    <main class="flex flex-col md:flex-row justify-between items-center text-left px-8 lg:px-10">
+        <section class="flex flex-col lg:flex-row gap-1 lg:gap-5 items-center mb-5 md:mb-0">
+            <img src="/public/img/main-icon.webp" alt="" class="aspect-square lg:w-32 rounded-full w-24"/>
+            <article class="flex lg:flex-col flex-row">
+                <AnchorIcon href="" img="/icons/facebook.svg" />
+                <AnchorIcon href="" img="/icons/mail.svg" />
+            </article>
         </section>
-        <ul>
-            <li><a class="hover:text-[#fff8f2]" href="">Servicios</a></li>
-            <li><a class="hover:text-[#fff8f2]" href="">Ubicanos</a></li>
-            <li><a class="hover:text-[#fff8f2]" href="">Contactanos</a></li>
+        <ul class="leading-loose text-sm lg:text-base lg:text-left text-center">
+            <AnchorSimple text="Servicios" href="/servicios" />
+            <AnchorSimple text="Ubicanos" href="/" />
+            <AnchorSimple text="Contactanos" href="/contactanos" />
         </ul>
-        <ul>
-            <li><a class="hover:text-[#fff8f2]" href="">Preguntas frecuentes</a></li>
-            <li><a class="hover:text-[#fff8f2]" href="">Terminos y condiciones</a></li>
-            <li><a class="hover:text-[#fff8f2]" href="">Trabaja con nosotros</a></li>
+        <ul class="leading-loose text-sm lg:text-base lg:text-left text-center">
+            <AnchorSimple text="Preguntas frecuentes" href="./" />
+            <AnchorSimple text="Terminos y condiciones" href="./" />
+            <AnchorSimple text="Trabaja con nosotros" href="./" />
         </ul>
-        <a href="" class="block bg-[#fff8f2] p-4 rounded-2xl hover:scale-110 ease-in-out duration-300 hover:text-orange-500">¡Pida su cita ahora!</a>
+        <a href="" class="block border-solid border-4 border-white mt-5 md:mt-0 lg:p-4 p-3 rounded-2xl hover:scale-105 lg:hover:scale-110 ease-in-out duration-300 hover:text-[#acf1bd] hover:border-[#acf1bd] text-sm lg:text-base">
+        ¡Pida su cita ahora!
+        </a>
     </main>
-    <hr class="border-none bg-[#fff8f2] h-1 my-8 rounded-3xl">
-    <span>Copyright © 2024 - Policlino La Trinidad. Todos los derechos reservados.</span>
+    <hr class="border-none bg-white h-1 my-8 rounded-3xl" />
+    <p>Copyright © 2024 - Policlino La Trinidad</p>
 </footer>
