@@ -1,6 +1,31 @@
 ---
-
+import AnchorIcon from "./AnchorIcon.astro";
+import AnchorSimple from "./AnchorSimple.astro";
 ---
-<footer class="bg-black h-32 bottom-0">
-    
+
+<footer class="bg-[url(/public/img/backgrounds/bg-footer.svg)] bg-no-repeat bg-cover pt-36 -mt-16 text-center text-white pb-8">
+    <main class="flex flex-col md:flex-row justify-between items-center text-left px-8 lg:px-10">
+        <section class="flex flex-col lg:flex-row gap-1 lg:gap-5 items-center mb-5 md:mb-0">
+            <img src="/public/img/main-icon.webp" alt="" class="aspect-square lg:w-32 rounded-full w-24"/>
+            <article class="flex lg:flex-col flex-row">
+                <AnchorIcon href="" img="/icons/facebook.svg" />
+                <AnchorIcon href="" img="/icons/mail.svg" />
+            </article>
+        </section>
+        <ul class="leading-loose text-sm lg:text-base lg:text-left text-center">
+            <AnchorSimple text="Servicios" href="/servicios" />
+            <AnchorSimple text="Ubicanos" href="/" />
+            <AnchorSimple text="Contactanos" href="/contactanos" />
+        </ul>
+        <ul class="leading-loose text-sm lg:text-base lg:text-left text-center">
+            <AnchorSimple text="Preguntas frecuentes" href="./" />
+            <AnchorSimple text="Terminos y condiciones" href="./" />
+            <AnchorSimple text="Trabaja con nosotros" href="./" />
+        </ul>
+        <a href="" class="block border-solid border-4 border-white mt-5 md:mt-0 lg:p-4 p-3 rounded-2xl hover:scale-105 lg:hover:scale-110 ease-in-out duration-300 hover:text-[#acf1bd] hover:border-[#acf1bd] text-sm lg:text-base">
+        ¡Pida su cita ahora!
+        </a>
+    </main>
+    <hr class="border-none bg-white h-1 my-8 rounded-3xl" />
+    <p>Copyright © 2024 - Policlino La Trinidad</p>
 </footer>

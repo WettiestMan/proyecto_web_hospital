@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import BotonServicios from "@/components/BotonServicios.astro"
+---
+<Layout title="Policlinico La Trinidad | Servicios">
+    <header class="grid md:grid-cols-2 grid-cols-1 max-w-7xl mx-auto bg-[#003449] p-5 mb-8 rounded-xl gap-5 text-white">
+        <section class="content-center">
+            <h1 class="font-black uppercase text-2xl lg:text-5xl mb-5 text-center md:text-left">Nuestros Servicios</h1>
+            <p class="text-pretty leading-relaxed text-[#acf1bd]">Contamos con un equipo de profesionales con años de experiencia que brindan un sistema de salud integral, dando al paciente atencio inmediata brindando asi una experiencia de calidad, en forma eficaz y orientada a la excelencia.</p>
+        </section>
+        <section class=" aspect-[407/254]">
+            <img loading="lazy" src="/public/img/Nosotros/image03.png" alt="" class="object-cover rounded-2xl">
+        </section>
+    </header>
+    <hr class="border-none text-transparent bg-gradient-to-r from-[#003449] h-1 mb-8 rounded-3xl"/>
+    <main>
+        <header>
+            <h2 class="text-center mb-12 font-extrabold text-4xl uppercase">Servicios Generales</h2>
+        </header>
+        <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 text-white w-fit lg:max-w-4xl mx-auto mb-10">
+            <BotonServicios href="cardiologia"/>
+            <BotonServicios href="farmacia"/>
+            <BotonServicios href="gastroenterologia"/>
+            <BotonServicios href="ginecologia"/>
+            <BotonServicios href="laboratorio"/>
+            <BotonServicios href="medicina-familiar"/>
+            <BotonServicios href="medicina-general"/>
+            <BotonServicios href="medicina-interna"/>
+            <BotonServicios href="odontologia"/>
+            <BotonServicios href="oftalmologia"/>
+            <BotonServicios href="pediatria"/>
+            <BotonServicios href="topico"/>
+        </section>
+    </main>
+</Layout>
