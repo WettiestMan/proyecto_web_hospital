@@ -51,13 +51,14 @@ import Anchor from "./Anchor.astro";
     <Anchor text="Contactanos" href="/notas-de-prensa" />
   </ul>
 </nav>
-<ul id="bar" class="fixed top-24 z-50 bg-[#d5eef1] rounded-[20px] right-0 hidden gap-y-4 p-4 text-center">
+<ul id="bar" class="fixed top-[4.5rem] ml-2 z-50 bg-[#d5eef1]  rounded-[20px] right-0 hidden gap-y-4 p-4 text-center sm:w-[40%] w-full ">
   <Anchor text="Inicio" href="/" />
   <Anchor text="Servicios" href="/servicios" />
   <Anchor text="Nosotros" href="/nosotros" />
   <Anchor text="Contactanos" href="/notas-de-prensa" />
 </ul>
 <script>
+document.addEventListener('astro:page-load', () => {
   const head = document.getElementById('hdr') as HTMLElement
   const observer = new IntersectionObserver(
     ([e]) => e.target.classList.toggle('isSticky', e.intersectionRatio < 1),
@@ -85,6 +86,7 @@ import Anchor from "./Anchor.astro";
       menuOpen = false;
     }
   });
+});
 </script>
 <style>
   #hdr.isSticky{
