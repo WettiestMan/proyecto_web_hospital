@@ -20,61 +20,63 @@
 </aside>
 
 <script>
-const playList: string[] = [
-  '/public/music/msc01.mp3',
-  '/public/music/msc02.mp3',
-  '/public/music/msc03.mp3'
-];
+  document.addEventListener('astro:page-load', () => {
+    const playList: string[] = [
+    '/public/music/msc01.mp3',
+    '/public/music/msc02.mp3',
+    '/public/music/msc03.mp3'
+    ];
 
-let currentIndex: number = 0;
-const songPlayer = document.getElementById('songPlayer') as HTMLAudioElement;
-const playPauseBtn = document.getElementById('playPauseBtn') as HTMLButtonElement;
-const prevBtn = document.getElementById('prevBtn') as HTMLButtonElement;
-const nextBtn = document.getElementById('nextBtn') as HTMLButtonElement;
-const volControl = document.getElementById('volControl') as HTMLInputElement;
-const iconPlayer = document.getElementById('iconPlayer') as HTMLImageElement;
+    let currentIndex: number = 0;
+    const songPlayer = document.getElementById('songPlayer') as HTMLAudioElement;
+    const playPauseBtn = document.getElementById('playPauseBtn') as HTMLButtonElement;
+    const prevBtn = document.getElementById('prevBtn') as HTMLButtonElement;
+    const nextBtn = document.getElementById('nextBtn') as HTMLButtonElement;
+    const volControl = document.getElementById('volControl') as HTMLInputElement;
+    const iconPlayer = document.getElementById('iconPlayer') as HTMLImageElement;
 
-// Función para cargar música
-function loadSong(index: number): void {
-  songPlayer.src = playList[index];
-  songPlayer.play();
-  iconPlayer.src = '/public/img/icons/songPlayer/pause.svg'
-}
+    // Función para cargar música
+    function loadSong(index: number): void {
+      songPlayer.src = playList[index];
+      songPlayer.play();
+      iconPlayer.src = '/public/img/icons/songPlayer/pause.svg'
+    }
 
-// Cargar la primera música
-loadSong(currentIndex);
+    // Cargar la primera música
+    loadSong(currentIndex);
 
-// Evento para cargar la siguiente música
-songPlayer.addEventListener('ended', () => {
-  currentIndex = (currentIndex + 1) % playList.length;
-  loadSong(currentIndex);
-});
+    // Evento para cargar la siguiente música
+    songPlayer.addEventListener('ended', () => {
+      currentIndex = (currentIndex + 1) % playList.length;
+      loadSong(currentIndex);
+    });
 
-// Control de reproducción/pausa
-playPauseBtn.addEventListener('click', () => {
-  if (songPlayer.paused) {
-    songPlayer.play();
-    iconPlayer.src = '/public/img/icons/songPlayer/pause.svg'
-  } else {
-    songPlayer.pause();
-    iconPlayer.src = '/public/img/icons/songPlayer/play.svg'
-  }
-});
+    // Control de reproducción/pausa
+    playPauseBtn.addEventListener('click', () => {
+      if (songPlayer.paused) {
+        songPlayer.play();
+        iconPlayer.src = '/public/img/icons/songPlayer/pause.svg'
+      } else {
+        songPlayer.pause();
+        iconPlayer.src = '/public/img/icons/songPlayer/play.svg'
+      }
+    });
 
-// Control de música anterior
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + playList.length) % playList.length;
-  loadSong(currentIndex);
-});
+    // Control de música anterior
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + playList.length) % playList.length;
+      loadSong(currentIndex);
+    });
 
-// Control de siguiente música
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % playList.length;
-  loadSong(currentIndex);
-});
+    // Control de siguiente música
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % playList.length;
+      loadSong(currentIndex);
+    });
 
-// Control de volumen
-volControl.addEventListener('input', () => {
-  songPlayer.volume = parseFloat(volControl.value);
-});
+    // Control de volumen
+    volControl.addEventListener('input', () => {
+      songPlayer.volume = parseFloat(volControl.value);
+    });
+  });
 </script>
