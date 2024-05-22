@@ -5,7 +5,7 @@ interface Props{
 }
 const {href, alt}=Astro.props;
 ---
-<a class="bg-[#acf1bd] hover:bg-[#003449] aspect-square rounded-xl p-2 hover:-translate-y-1 duration-300 transition ease-in-out text-[#0a1f27] hover:text-[#acf1bd]" href={`./servicios/${href}`}>
+<a class="bg-[#b8d8db] hover:bg-[#003449] aspect-square rounded-xl p-2 hover:-translate-y-1 duration-300 transition ease-in-out text-[#0a1f27] hover:text-[#acf1bd]" href={`./servicios/${href}`}>
     <img loading="lazy" decoding="async" class="w-40 mx-auto" src={`/public/img/Servicios/${href}.png`} alt={alt}>
     <h2 class="mt-2 text-center uppercase font-semibold text-[0.7rem] lg:text-base">{href}</h2>
 </a>
