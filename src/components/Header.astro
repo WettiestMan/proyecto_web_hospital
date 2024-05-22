@@ -1,105 +1,103 @@
 ---
 import Anchor from "./Anchor.astro";
-import AnchorIcon from "./AnchorIcon.astro";
 ---
 
 <header
   class="rounded-3xl bg-[#d5eef1] justify-between py-4 px-12 mt-10 mb-4 mx-20 hidden lg:flex shadow-md"
 >
-  <section class="flex gap-6">
+  <section class="flex gap-10">
     <article class="flex gap-2">
-      <AnchorIcon img="/icons/whatsapp.svg" href="" />
-      <span>Whatsapp<br />consultas e informacíon</span>
+      <img src="/public/img/icons/whatsapp.svg" alt="" class="aspect-square w-12">
+      <span>Whatsapp<br />991 351 239</span>
     </article>
     <article class="flex gap-2">
-      <AnchorIcon img="/icons/whatsapp.svg" href="" />
-      <span>Central telefonica<br />281-0594 / 991 351 239</span>
+      <img src="/public/img/icons/phone.svg" alt="" class="aspect-square w-12">
+      <span>Central telefonica<br />281-0594</span>
     </article>
   </section>
   <section class="flex gap-4 items-center">
-    <AnchorIcon img="/icons/whatsapp.svg" href="" />
-    <AnchorIcon img="/icons/whatsapp.svg" href="" />
-    <AnchorIcon img="/icons/whatsapp.svg" href="" />
+    <a href="" class="hover:-translate-y-1 transition ease-in-out duration-300">
+      <img src="/public/img/icons/facebook.svg" alt="" class="aspect-square w-12">
+    </a>
+    <a href="" class="hover:-translate-y-1 transition ease-in-out duration-300">
+      <img src="/public/img/icons/instagram.svg" alt="" class="aspect-square w-11">
+    </a>
+    <a href="" class="hover:-translate-y-1 transition ease-in-out duration-300">
+      <img src="/public/img/icons/mail.svg" alt="" class="aspect-square w-12">
+    </a>
   </section>
 </header>
 <nav
-  class="sticky top-[-1px] pt-[calc(1em + 1px)] px-10 flex justify-between z-50 py-2 rounded-b-xl"
+  class="sticky top-[-1px] pt-[calc(1em + 1px)] px-10 flex justify-between items-center z-50 py-2 rounded-b-[20px] transition-all"
   id="hdr"
 >
   <a href="/" class="flex items-center gap-4">
     <img
       src="/public/img/main-icon.webp"
       alt=""
-      class="rounded-full aspect-square h-20"
+      class="rounded-full aspect-square w-14 lg:w-20 mx-auto"
     />
-    <span class="text-xl font-semibold uppercase"
+    <span class="text-xl font-semibold uppercase hidden lg:inline"
       >Centro medico<br />La Trinidad</span
     >
   </a>
-  <ul class="hidden lg:flex gap-4 items-center">
+  <button id="menu" class="block md:hidden rounded-lg active:bg-[#d5eef1] bg-[#acf1bd]">
+    <img id="icon_menu" src="/public/img/icons/menu.svg" alt="" class="w-10">
+  </button>
+  <ul class="gap-4 items-center text-center hidden md:flex text-xs lg:text-base">
     <Anchor text="Inicio" href="/" />
     <Anchor text="Servicios" href="/servicios" />
     <Anchor text="Nosotros" href="/nosotros" />
     <Anchor text="Contactanos" href="/notas-de-prensa" />
   </ul>
 </nav>
-<script is:inline>
-  const head = document.querySelector('#hdr');
-  if (head) {
-    const observer = new IntersectionObserver(
-      ([e]) => e.target.classList.toggle('isSticky', e.intersectionRatio < 1),
-      { threshold: [1] }
-    );
-    observer.observe(head);
-  }
+<ul id="bar" class="fixed top-24 z-50 bg-[#d5eef1] rounded-[20px] right-0 hidden gap-y-4 p-4 text-center">
+  <Anchor text="Inicio" href="/" />
+  <Anchor text="Servicios" href="/servicios" />
+  <Anchor text="Nosotros" href="/nosotros" />
+  <Anchor text="Contactanos" href="/notas-de-prensa" />
+</ul>
+<script>
+  const head = document.getElementById('hdr') as HTMLElement
+  const observer = new IntersectionObserver(
+    ([e]) => e.target.classList.toggle('isSticky', e.intersectionRatio < 1),
+    { threshold: [1] }
+  );
+  observer.observe(head)
+  const menu = document.getElementById('menu') as HTMLButtonElement
+  const icon_menu = document.getElementById('icon_menu') as HTMLImageElement
+  const bar = document.getElementById('bar') as HTMLUListElement
+  let menuOpen = false
+  menu.addEventListener('click',()=>{
+    menuOpen = !menuOpen
+    if (menuOpen) {
+      icon_menu.src = '/public/img/icons/close.svg';
+      bar.classList.add('active')
+    } else {
+      icon_menu.src = '/public/img/icons/menu.svg';
+      bar.classList.remove('active')
+    }
+  })
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      icon_menu.src = '/public/img/icons/menu.svg';
+      bar.classList.remove('active');
+      menuOpen = false;
+    }
+  });
 </script>
 <style>
   #hdr.isSticky{
     background-color: white;
     box-shadow: 0 10px 10px #0000001a;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  #hdr.isSticky span{
+    display: none;
+  }
+  #bar.active{
+    display: flex;
+    flex-direction: column;
   }
 </style>
-<!-- <input type="checkbox" id="sidebar" class="hidden">
-<label for="sidebar" class="open fixed hover:bg-white hover:scale-110 ease-in-out duration-300 hover:bg-opacity-10 rounded-md right-8 md:right-12 top-10 z-20 lg:hidden">
-    <img src="/public/img/icons/menu.svg" alt="">
-</label>
-<label for="sidebar" class="close fixed hover:bg-white hover:scale-110 ease-in-out duration-300 hover:bg-opacity-10 rounded-md right-8 md:right-12 top-10 z-20 hidden">
-    <img src="/public/img/icons/close.svg" alt="">
-</label>
-<nav class="lateral fixed right-0 top-28 z-20 w-full md:w-64 bg-black bg-opacity-10 backdrop-blur-sm shadow-md rounded-2xl hidden">
-    <ul class="flex flex-col gap-6 m-6 text-center">
-        <Anchor text="Inicio" href="/"/>
-        <Anchor text="Servicios" href="/servicios"/>
-        <Anchor text="Nosotros" href="/nosotros"/>
-        <Anchor text="Contactanos" href="/notas-de-prensa"/>
-    </ul>
-</nav>
-<header class="sticky top-0 flex w-full justify-between z-10 px-8 md:px-12 pt-3 items-center bg-transparent backdrop-blur-sm">
-    <a href="/" class="flex items-center">
-        <img src="/public/img/Header/main-icon.webp" alt="" class="rounded-full aspect-square h-20"/>
-        <span class="ml-4 text-xl font-semibold uppercase">Centro medico<br>La Trinidad</span>
-    </a>
-    <nav class="hidden lg:block">
-        <ul class="flex gap-4">
-            <Anchor text="Inicio" href="/"/>
-            <Anchor text="Servicios" href="/servicios"/>
-            <Anchor text="Nosotros" href="/nosotros"/>
-            <Anchor text="Contactanos" href="/notas-de-prensa"/>
-        </ul>
-    </nav>
-</header> -->
-<!-- <style>
-    #sidebar:checked ~ .lateral{
-        display: block;
-    }
-    #sidebar:checked ~ .open{
-        display: none;
-    }
-    #sidebar:checked ~ .close{
-        display: block
-    }
-</style> -->

@@ -18,18 +18,24 @@ import BotonServicios from "@/components/BotonServicios.astro"
             <h2 class="text-center mb-12 font-extrabold text-4xl uppercase">Servicios Generales</h2>
         </header>
         <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 text-white w-fit lg:max-w-4xl mx-auto mb-10">
-            <BotonServicios href="cardiologia"/>
-            <BotonServicios href="farmacia"/>
-            <BotonServicios href="gastroenterologia"/>
-            <BotonServicios href="ginecologia"/>
-            <BotonServicios href="laboratorio"/>
-            <BotonServicios href="medicina-familiar"/>
+            <a class="relative bg-[url(/public/img/Servicios/laboratorio.png)] aspect-square rounded-xl p-2 hover:-translate-y-1 duration-300 transition hover:text-[#acf1bd] ease-in-out flex flex-col justify-center items-center bg-cover" href="/servicios/de-apoyo">
+                <div class="absolute inset-0 bg-[#0b2935] opacity-90 rounded-xl"></div>
+                <h2 class="z-10 relative mt-2 text-center uppercase font-semibold text-base">Servicios de<br>apoyo</h2>
+            </a>
             <BotonServicios href="medicina-general"/>
             <BotonServicios href="medicina-interna"/>
+            <a class="relative bg-[url(/public/img/Servicios/psicologia.png)] aspect-square rounded-xl p-2 hover:-translate-y-1 duration-300 transition hover:text-[#acf1bd] ease-in-out flex flex-col justify-center items-center bg-origin-content bg-cover bg-no-repeat" href="/servicios/complementarios">
+                <div class="absolute inset-0 bg-[#0b2935] opacity-90 rounded-xl"></div>
+                <h2 class="z-10 relative mt-2 text-center uppercase font-semibold text-base">Servicios<br>complementarios</h2>
+            </a>
+            <BotonServicios href="gastroenterologia"/>
             <BotonServicios href="odontologia"/>
+            <BotonServicios href="obstetricia"/>
             <BotonServicios href="oftalmologia"/>
+            <BotonServicios href="urologia"/>
+            <BotonServicios href="endocrinologia"/>
             <BotonServicios href="pediatria"/>
-            <BotonServicios href="topico"/>
+            <BotonServicios href="psiquiatria"/>
         </section>
     </main>
 </Layout>
