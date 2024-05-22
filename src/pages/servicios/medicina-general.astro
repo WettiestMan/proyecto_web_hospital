@@ -1,0 +1,34 @@
+---
+import CiteCard from "@/components/CiteCard.astro"
+import Layout from "@/layouts/Layout.astro"
+---
+
+<Layout title="">
+    <section class="flex mt-10 mb-12 flex-col lg:flex-row mx-auto max-w-screen-2xl">
+        <picture class="lg:flex items-center mx-auto min-w-max hidden">
+            <img class="bg-[#e8fdff]" src="/public/img/Servicios/Medicina-general/img01.png" alt="" style="clip-path: ellipse(39% 50% at 50% 50%);">
+        </picture>
+        <div class="flex flex-col justify-between my-10">
+            <h1 class="text-7xl font-black text-center lg:text-left mb-4">Medicina<br>General</h1>
+            <p class="bg-[#003449] p-4 rounded-lg max-w-3xl mx-auto mb-4">La Medicina General es el primer nivel de atención médica. La consulta está orientada al abordaje integral del paciente en su aspecto físico, mental y social. Dependiendo del caso se procede a la identificación de factores de riesgo para enfermedades latentes o potenciales en corto, mediano y largo plazo; orientando al paciente sobre la manera más adecuada de prevenirlas e incentivando estilos de vida saludables.</p>
+            <p class="block lg:hidden bg-[#b8d8db] p-4 rounded-lg max-w-2xl mx-auto text-[#003449]">El profesional esta capacitado para realizar el diagnóstico y tratamiento de diferentes patologías comunes de manera ambulatoria y derivar al especialista indicado cuando corresponda.</p>
+        </div>
+    </section>
+    <main class="flex mb-20 mx-auto justify-between flex-col lg:flex-row gap-5">
+        <section class="mx-auto">
+            <h2 class=" text-2xl pb-4 font-medium">Nuestros medicos especialisados<br>pueden ayudarte en:</h2>
+                <ul class="leading-relaxed bg-[#acf1bd] text-[#003449] p-4 rounded-lg text-center lg:text-left lg:w-fit">
+                    <li>Consultas medicas</li>
+                    <li>Realizar examenes medicos</li>
+                    <li>Remitir a medicos especialistas</li>
+                    <li>Leer resultados de Laboratorio</li>
+                    <li>Tratamientos preventivos</li>
+                </ul>
+        </section>
+        <section class="flex gap-4 flex-col md:flex-row mx-auto">
+            <CiteCard img="/public/img/Servicios/Medicina-general/img02.webp" name="Dr. Javier Huamani" cite="Un médico responsable, con sólida formación científica básico-clínica, capaz de realizar diagnósticos correctos"/>
+            <CiteCard img="/public/img/Servicios/Medicina-general/img03.webp" name="Dra. Rosario Coahila" cite="Un médico responsable, con sólida formación científica básico-clínica, capaz de realizar diagnósticos correctos"/>
+            <CiteCard img="/public/img/Servicios/Medicina-general/img04.webp" name="Dra. Jenny Miguel" cite="Un médico responsable, con sólida formación científica básico-clínica, capaz de realizar diagnósticos correctos"/>
+        </section>
+    </main>
+</Layout>
