@@ -86,41 +86,45 @@ let images: ImageInfo[] = [new ImageInfo("../public/img/Inicio/slide1.jpg", "Ser
                 });
             </script>
         </section>
-        <section class="grid grid-cols-1 min-[0px]:max-[639px]:grid-rows-2 sm:grid-cols-2 bg-naples_yellow-mixed w-full m-auto border-0 rounded-xl">
+        <section class="grid grid-cols-1 min-[0px]:max-[639px]:grid-rows-2 sm:grid-cols-2 bg-mint-green w-full m-auto border-0 rounded-xl">
             <article class="flex flex-col sm:flex-row items-center m-auto min-w[321px]:h-full max-w[320px]:w-full">
                 <div class="p-4 w-full min-[0px]:max-sm:h-fit items-center relative">
                     <h2 class="text-center font-extrabold m-4">Ubícanos</h2>
-                    <p>Av. La Unión 612 - Mz 35 - Lt. G.P.P.J.J.<br></p>
-                    <p>Inca Pachacutec - V.M.T - Lima - Lima</p>
+                    <p class="text-black">Av. La Unión 612 - Mz 35 - Lt. G.P.P.J.J.<br></p>
+                    <p class="text-black">Inca Pachacutec - V.M.T - Lima - Lima</p>
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2757.7636660113094!2d-76.94981591403894!3d-12.175856881966752!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b91c7eaa4d59%3A0x2446918179d18056!2sPoliclinico%20LA%20TRINIDAD!5e0!3m2!1ses!2sus!4v1714710357696!5m2!1ses!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="p-4 relative aspect-square w-full sm:w-2/4"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2757.7636660113094!2d-76.94981591403894!3d-12.175856881966752!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b91c7eaa4d59%3A0x2446918179d18056!2sPoliclinico%20LA%20TRINIDAD!5e0!3m2!1ses!2sus!4v1714710357696!5m2!1ses!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="p-4 relative aspect-square w-full sm:w-2/4 border-0"></iframe>
             </article>
-            <article class="w-full grid grid-cols-1 bg-sandy_brown items-center justify-center sm:rounded-r-xl min-[0px]:max-[639px]:rounded-b-xl">
-                <button class="btn hover:animate-pop QuickAccessButtons">Resultados de<br>laboratorio</button>
-                <button class="btn hover:animate-pop QuickAccessButtons">Notas de prensa</button>
-                <button class="btn hover:animate-pop QuickAccessButtons">Contáctanos</button>
+            <article class="w-full grid grid-cols-1 bg-light-blue items-center justify-center sm:rounded-r-xl min-[0px]:max-[639px]:rounded-b-xl">
+                <button class="btn ease-in-out duration-300 QuickAccessButtons">Resultados de<br>laboratorio</button>
+                <button class="btn ease-in-out duration-300 QuickAccessButtons">Notas de prensa</button>
+                <button class="btn ease-in-out duration-300 QuickAccessButtons">Contáctanos</button>
             </article>
         </section>
     </main>
 </Layout>
 <style>
     .QuickAccessButtons{
-        background-color: #fe914c;
+        background-color: #d5eef1;
         border-width: 1px;
         border-style: solid;
         border-radius: 9999px;
-        border-color: white;
+        border-color: #003449;
         font-weight: 700;
         width: 60%;
         height: 57%;
         margin: 0 auto;
-        color: white;
+        color: #003449;
     }
 
-    /*@media (min-width: 640px){
-        .QuickAccessButtons{
-            width: 60%;
-            height: 57%;
+    .QuickAccessButtons:hover{
+        transform: scale(1.05);
+        background-color: #acf1bd;
+    }
+
+    @media (min-width: 1024px){
+        .QuickAccessButtons:hover{
+            transform: scale(1.10);
         }
-    }*/
+    }
 </style>
