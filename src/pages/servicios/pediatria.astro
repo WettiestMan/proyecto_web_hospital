@@ -1,7 +1,33 @@
 ---
+import CiteCard from "@/components/CiteCard.astro"
 import Layout from "@/layouts/Layout.astro"
 ---
 
 <Layout title="">
-    
+    <section class="mt-8">
+        <h1 class="lg:text-7xl text-4xl font-black text-center mb-4">Pediatria</h1>
+        <picture>
+            <img src="/public/img/Servicios/pediatria/img01.webp" class="mx-auto" alt="">
+        </picture>
+        <section class="flex flex-col lg:flex-row gap-4 mb-8">
+            <p class="bg-[#003449] p-4 rounded-lg max-w-screen-md mx-auto">La pediatría es una rama de la medicina que se enfoca en el cuidado de la salud de los niños, desde el nacimiento hasta la adolescencia. Los pediatras son médicos especializados en esta área y están capacitados para diagnosticar, tratar y prevenir una amplia variedad de enfermedades y trastornos que afectan a los niños.</p>
+            <p class="bg-[#b8d8db] p-4 rounded-lg max-w-screen-sm mx-auto text-[#003449]">Los pediatras son médicos especializados en la atención médica de niños, desde el nacimiento hasta la adolescencia, cubriendo diagnóstico, tratamiento y prevención de enfermedades infantiles, así como seguimiento del desarrollo físico, cognitivo y emocional.</p>
+        </section>
+    </section>
+    <main class="flex mb-20 mx-auto  flex-col lg:flex-row gap-3">
+        <section class="lg:flex-1 mx-auto">
+            <h2 class="text-2xl pb-4 font-medium">Nuestros medicos especialisados<br>pueden ayudarte en:</h2>
+            <ul class="leading-relaxed bg-[#acf1bd] text-[#003449] p-4 rounded-lg text-center lg:text-left w-fit">
+                <li>cuidado médico de los recién nacidos</li>
+                <li>monitoreo y la evaluación del desarrollo infantil</li>
+                <li>Gastroenterología Pediátrica</li>
+                <li>Sdiagnóstico y tratamiento de trastornos neurológicos en niños</li>
+                <li>Cardiología Pediátrica</li>
+                <li>Oncología Pediátrica</li>
+            </ul>
+        </section>
+        <picture class="lg:flex-1 max-w-xl min-w-96 mx-auto">
+            <img src="/public/img/Servicios/pediatria/img02.jpg" class="lg:h-auto mx-auto rounded-tr-xl rounded-bl-xl" alt="">
+        </picture>
+    </main>
 </Layout>
