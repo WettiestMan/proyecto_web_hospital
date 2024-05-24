@@ -2,24 +2,24 @@
 
 ---
 <aside class=" transition-all fixed bottom-2 right-2 z-10 hover:bg-[#acf1bd] hover:bg-opacity-70 hover:backdrop-blur-sm rounded-lg p-2 hover:p-3">
-  <picture>
-    <img id="jiji" src="/public/img/icons/songPlayer/icon_audio.svg" alt="" class="w-12">
-  </picture>
-  <audio id="songPlayer" autoplay></audio>
-  <main id="customControls" class="hidden">
-    <button id="prevBtn" class="rounded-full active:scale-110">
-      <img src="/public/img/icons/songPlayer/next_preview.svg" alt="" class="w-10">
-    </button>
-    <button id="playPauseBtn" class="rounded-full active:scale-110">
-      <img id="iconPlayer" src="/public/img/icons/songPlayer/play.svg" alt="" class="w-10">
-    </button>
-    <button id="nextBtn" class="rounded-full active:scale-110">
-      <img src="/public/img/icons/songPlayer/next_preview.svg" alt="" class="w-10 -scale-x-[1]">
-    </button>
-    <section>
-      <input type="range" name="" id="volControl" min="0" max="1" step=".01" value=".2" class="accent-[#003449]">
-    </section>
-  </main>
+	<picture>
+		<img src="/public/img/icons/songPlayer/icon_audio.svg" alt="" class="w-12">
+	</picture>
+	<audio id="songPlayer" autoplay></audio>
+	<main id="customControls" class="hidden">
+		<button id="prevBtn" class="rounded-full active:scale-110">
+			<img src="/public/img/icons/songPlayer/next_preview.svg" alt="" class="w-10">
+		</button>
+		<button id="playPauseBtn" class="rounded-full active:scale-110">
+			<img id="iconPlayer" src="/public/img/icons/songPlayer/play.svg" alt="" class="w-10">
+		</button>
+		<button id="nextBtn" class="rounded-full active:scale-110">
+			<img src="/public/img/icons/songPlayer/next_preview.svg" alt="" class="w-10 -scale-x-[1]">
+		</button>
+		<section>
+			<input type="range" name="" id="volControl" min="0" max="1" step=".01" value=".2" class="accent-[#003449]">
+		</section>
+	</main>
 </aside>
 
 <style>
@@ -53,9 +53,7 @@
       songPlayer.play();
       iconPlayer.src = '/public/img/icons/songPlayer/pause.svg'
     }
-
-loadSong(currentIndex);
-
+    loadSong(currentIndex);
     // Evento para cargar la siguiente música
     songPlayer.addEventListener('ended', () => {
       currentIndex = (currentIndex + 1) % playList.length;
@@ -72,13 +70,11 @@ loadSong(currentIndex);
         iconPlayer.src = '/public/img/icons/songPlayer/play.svg'
       }
     });
-
     // Control de música anterior
     prevBtn.addEventListener('click', () => {
       currentIndex = (currentIndex - 1 + playList.length) % playList.length;
       loadSong(currentIndex);
     });
-
     // Control de siguiente música
     nextBtn.addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % playList.length;
