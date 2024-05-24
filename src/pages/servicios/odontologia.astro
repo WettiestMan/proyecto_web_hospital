@@ -1,7 +1,34 @@
 ---
+import CiteCard from "@/components/CiteCard.astro"
 import Layout from "@/layouts/Layout.astro"
 ---
 
 <Layout title="">
-    
+    <h1 class="lg:text-7xl text-4xl font-black text-center mb-4 mt-8">Odontologia</h1>
+    <section class="mt-8 flex flex-col lg:flex-row gap-8 justify-center mb-5">
+        <picture>
+            <img src="/public/img/Servicios/odontologia/img01.jpg" class="mx-auto max-h-96" alt="">
+        </picture>
+        <section class="flex flex-col gap-4 mb-8 justify-center mx-auto lg:mx-0">
+            <p class="bg-[#003449] p-4 rounded-lg max-w-screen-sm">La odontología es una rama de la medicina que se especializa en el diagnóstico, tratamiento y prevención de enfermedades y trastornos relacionados con los dientes, las encías, la boca y las estructuras relacionadas. Los profesionales de la odontología, conocidos como dentistas u odontólogos, se dedican al cuidado integral de la salud bucal.</p>
+            <p class="bg-[#b8d8db] p-4 rounded-lg max-w-screen-sm text-[#003449]">Los odontólogos se especializan en áreas como ortodoncia, periodoncia y cirugía oral, brindando atención dental específica y experta. Estas especialidades requieren formación adicional y permiten un enfoque más especializado en el cuidado dental.</p>
+        </section>
+    </section>
+    <hr class="border-none text-transparent bg-gradient-to-r from-[#003449] h-1 mb-8 rounded-3xl"/>
+    <main class="flex mb-20 mx-auto  flex-col lg:flex-row gap-3">
+        <section class="lg:flex-1 mx-auto">
+            <h2 class="text-2xl pb-4 font-medium">Nuestros medicos especialisados<br>pueden ayudarte en:</h2>
+            <ul class="leading-relaxed bg-[#acf1bd] text-[#003449] p-4 rounded-lg text-center lg:text-left w-fit">
+                <li>Prevención y Tratamiento de Enfermedades Dentales</li>
+                <li>Corrección de Problemas de Alineación Dental</li>
+                <li>Tratamiento de Enfermedades de las Encías</li>
+                <li>Extracciones y Cirugías Dentales</li>
+                <li>Restauración de Dientes Dañados</li>
+                <li>Mejora de la Estética Dental</li>
+            </ul>
+        </section>
+        <picture class="lg:flex-1 max-w-xl min-w-96 mx-auto">
+            <img src="/public/img/Servicios/odontologia/img02.jpg" class="lg:h-auto mx-auto rounded-tr-3xl rounded-bl-3xl" alt="">
+        </picture>
+    </main>
 </Layout>

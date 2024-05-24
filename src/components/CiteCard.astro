@@ -9,7 +9,7 @@ interface Props{
 const {img, name, cite} = Astro.props
 ---
 <article class="relative p-4 bg-[#b8d8db] flex flex-col group rounded-lg justify-center">
-    <img src={img} alt="Doctor's image" class="rounded-full w-44">
+    <img src={img} alt="Doctor's image" class="rounded-full w-44 mx-auto">
     <span class="font-bold text-[#003449] text-center">{name}</span>
     <div class="absolute bg-[#003449] flex justify-center items-center text-center p-4 box-border opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-lg top-0 left-0 w-full h-full">
         <p>
