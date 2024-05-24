@@ -1,0 +1,57 @@
+<form action="" method="dialog">
+    <article class="after:table after:clear-both">
+        <div class="max-md:w-full max-md:mt-0 float-left w-[25%] mt-[6px]">
+            <label class="py-3 pr-3 inline-block" for="nombre">Nombre</label>
+        </div>
+        <div class="max-md:w-full max-md:mt-0 float-left w-[75%] mt-[6px]">
+            <input class="w-full p-3 border-[1px] border-[#ccc] rounded resize-y" type="text" id="nombre" name="Nombre" placeholder="Escriba su nombre...">
+        </div>
+    </article>
+    <article class="after:table after:clear-both">
+        <div class="max-md:w-full max-md:mt-0 float-left w-[25%] mt-[6px]">
+            <label class="py-3 pr-3 inline-block" for="apellido">Apellidos</label>
+        </div>
+        <div class="max-md:w-full max-md:mt-0 float-left w-[75%] mt-[6px]">
+            <input class="w-full p-3 border-[1px] border-[#ccc] rounded resize-y" type="text" id="apellido" name="Apellido" placeholder="Escriba sus apellidos...">
+        </div>
+    </article>
+    <article class="after:table after:clear-both">
+        <div class="max-md:w-full max-md:mt-0 float-left w-[25%] mt-[6px]">
+            <label class="py-3 pr-3 inline-block" for="telefono">Telefono</label>
+        </div>
+        <div class="max-md:w-full max-md:mt-0 float-left w-[75%] mt-[6px]">
+            <input class="w-full p-3 border-[1px] border-[#ccc] rounded resize-y" type="tel" id="telefono" name="Telefono">
+        </div>
+    </article>
+    <article class="after:table after:clear-both">
+        <div class="max-md:w-full max-md:mt-0 float-left w-[25%] mt-[6px]">
+            <label class="py-3 pr-3 inline-block" for="Service">Servicio</label>
+        </div>
+        <div class="max-md:w-full max-md:mt-0 float-left w-[75%] mt-[6px]">
+            <select class="w-full p-3 border-[1px] border-[#ccc] rounded resize-y" id="service" name="Servicio">
+                <option value="MediciniaGeneral">Medicina General</option>
+                <option value="MedicinaInterna">Medicina Interna</option>
+                <option value="gastroenterologia">Gastroenterologia</option>
+                <option value="odontologia">Odontologia</option>
+                <option value="obstetricia">Obstetricia</option>
+                <option value="oftalmologia">Oftalmologia</option>
+                <option value="urologia">Urologia</option>
+                <option value="endocrinologia">Endocrinologia</option>
+                <option value="pediatria">Pediatria</option>
+                <option value="psiquiatria">Psiquiatria</option>
+            </select>
+        </div>
+    </article>
+    <article class="after:table after:clear-both">
+        <div class="max-md:w-full max-md:mt-0 float-left w-[25%] mt-[6px]">
+            <label class="py-3 pr-3 inline-block" for="comentario">Comentario</label>
+        </div>
+        <div class="max-md:w-full max-md:mt-0 float-left w-[75%] mt-[6px]">
+            <textarea class="w-full p-3 border-[1px] border-[#ccc] rounded resize-y" id="comentario" name="comentario" placeholder="Escriba su comentario aqui" style="height:200px"></textarea>
+        </div>
+    </article>
+    <section class="after:table after:clear-both flex justify-center gap-4">
+        <button type="submit" class="bg-[#003449] rounded-xl font-bold max-md:w-full text-[#acf1bd] px-4 py-2">Enviar</button>
+        <button class="closeModal">cerrar</button>
+    </section>
+</form>
