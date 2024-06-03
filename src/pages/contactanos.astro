@@ -1,5 +1,6 @@
 ---
 import FormCitas from "@/components/FormCitas.astro"
+import EmailForm from "@/components/EmailForm"
 import Layout from "@/layouts/Layout.astro"
 ---
 
@@ -41,9 +42,8 @@ import Layout from "@/layouts/Layout.astro"
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2757.7636660113094!2d-76.94981591403894!3d-12.175856881966752!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b91c7eaa4d59%3A0x2446918179d18056!2sPoliclinico%20LA%20TRINIDAD!5e0!3m2!1ses!2sus!4v1714710357696!5m2!1ses!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="h-[300px] w-full"></iframe>
             </div>
         </section>
-        <section class="p-4 bg-[#acf1bd] text-[#003449] rounded-lg flex-1">
-            <p class="text-[#003449] font-semibold text-pretty">Contáctenos para programar una cita hoy.<br>Llámenos al 281-0594<br>O complete el siguiente formulario y uno de nuestros empleados se comunicará con usted para confirmar una cita</p> 
-            <FormCitas/>
+        <section class="p-5 bg-[#acf1bd] text-[#003449] rounded-r-lg flex-1 flex flex-col justify-center">
+            <EmailForm client:load/>
         </section>
     </main>
 </Layout>
