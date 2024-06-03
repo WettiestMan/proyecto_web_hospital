@@ -12,13 +12,13 @@ import {
   Text,
   Row,
   Hr,
-  Font
+  Font,
 } from "@react-email/components";
 
 export const CodepenChallengersEmail = ({
-  Nombre = "Manuel",
+  Nombre = "Null",
   Correo = "manuel715pl@gmail.com",
-  Telefono = 3322,
+  Telefono = "999 999 999",
   Servicio = "cardiologia",
   Comentario = `Solicito el servicio de ${Servicio}, comuniquense con mi persona por medio de los datos enviados porfavor`,
 }) => (
@@ -47,7 +47,7 @@ export const CodepenChallengersEmail = ({
         </Section>
         <Section className="font-bold text-center">
           <Heading as="h2">
-            Servicio pedido:{" "}
+            Servicio pedido:
             <Text className="text-[#003449] inline uppercase font-black">
               {Servicio}
             </Text>
@@ -82,7 +82,7 @@ export const CodepenChallengersEmail = ({
               <Section className="p-0 m-0">
                 <Img
                   src={`public/img/Servicios/${Servicio}.png`}
-                  alt="Icono del Policlinico La Trinidad"
+                  alt={`Icono de ${Servicio}`} 
                   className="w-48 mx-auto"
                 />
               </Section>
@@ -96,7 +96,9 @@ export const CodepenChallengersEmail = ({
           </Text>
         </Section>
         <Section className="text-center">
-          <Button style={button} href="/">Policlinio La Trinidad</Button>
+          <Button style={button} href="/">
+            Policlinio La Trinidad
+          </Button>
         </Section>
       </Container>
     </Body>
