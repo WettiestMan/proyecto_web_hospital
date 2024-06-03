@@ -4,6 +4,7 @@ import Footer from "@/components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 import BgMusic from "@/components/BgMusic.astro";
 import '@fontsource-variable/onest';
+import Musica from "@/components/Musica"
 interface Props {
   title: string;
 }
@@ -28,8 +29,9 @@ const { title } = Astro.props;
         <ViewTransitions />
     </head>
     <body>
-        <Header />
-        <BgMusic />
+        <Header/>
+        <!-- <BgMusic/> -->
+        <Musica client:load transition:persist/>
         <main class="mx-5 md:mx-10 lg:mx-20">
             <slot />
         </main>
