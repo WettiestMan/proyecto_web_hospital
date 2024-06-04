@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Play = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="#003449">

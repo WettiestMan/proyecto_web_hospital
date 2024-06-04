@@ -16,10 +16,10 @@ import {
 } from "@react-email/components";
 
 export const CodepenChallengersEmail = ({
-  Nombre = "Null",
-  Correo = "manuel715pl@gmail.com",
-  Telefono = "999 999 999",
-  Servicio = "cardiologia",
+  Nombre,
+  Correo,
+  Telefono,
+  Servicio,
   Comentario = `Solicito el servicio de ${Servicio}, comuniquense con mi persona por medio de los datos enviados porfavor`,
 }) => (
   <Html>
