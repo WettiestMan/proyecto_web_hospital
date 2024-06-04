@@ -1,7 +1,7 @@
 ---
 import Anchor from "./Anchor.astro";
-import ModalCitas from "./ModalCitas.astro";
-import Citas from "./ModalCitas.astro";
+import EmailForm from "./EmailForm";
+import Modal from "./Modal.astro";
 ---
 
 <header
@@ -27,7 +27,9 @@ import Citas from "./ModalCitas.astro";
 		<a href="" class="hover:-translate-y-1 transition ease-in-out duration-300">
 			<img src="/public/img/icons/mail.svg" alt="" class="aspect-square w-12">
 		</a>
-		<ModalCitas/>
+    <Modal textButton="¡Pida su cita ahora!">
+      <EmailForm client:visible/>
+    </Modal>
 	</section>
 </header>
 <nav class="sticky top-[-1px] pt-[calc(1em + 1px)] px-10 flex justify-between items-center z-50 py-2 rounded-b-[20px] bg-white transition-all" id="hdr">
@@ -50,7 +52,6 @@ import Citas from "./ModalCitas.astro";
   <Anchor text="Servicios" href="/servicios" />
   <Anchor text="Nosotros" href="/nosotros" />
   <Anchor text="Contactanos" href="/contactanos" />
-  <Citas/>
 </ul>
 <script>
   document.addEventListener('astro:page-load', () => {

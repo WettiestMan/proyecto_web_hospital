@@ -1,8 +1,8 @@
 ---
 import AnchorIcon from "./AnchorIcon.astro";
 import AnchorSimple from "./AnchorSimple.astro";
-import ModalCitas from "./ModalCitas.astro";
-import Citas from "./ModalCitas.astro";
+import EmailForm from "./EmailForm";
+import Modal from "./Modal.astro";
 ---
 
 <footer class="bg-[url(/public/img/backgrounds/bg-footer.svg)] bg-no-repeat bg-cover pt-36 -mt-12 text-center text-white pb-8 px-8">
@@ -30,7 +30,9 @@ import Citas from "./ModalCitas.astro";
             <AnchorSimple text="Terminos y condiciones" href="./" />
             <AnchorSimple text="Trabaja con nosotros" href="./" />
         </ul>
-        <ModalCitas/>
+        <Modal textButton="¡Pida su cita ahora!">
+            <EmailForm client:visible/>
+        </Modal>
     </main>
     <hr class="border-none bg-white h-1 my-8 rounded-3xl" />
     <p>Copyright © 2024 - Policlino La Trinidad</p>
