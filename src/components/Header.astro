@@ -9,23 +9,23 @@ import Modal from "./Modal.astro";
 >
 	<section class="flex gap-10">
 		<article class="flex gap-2">
-			<img src="/public/img/icons/whatsapp.svg" alt="" class="aspect-square w-12">
+			<img src="/img/icons/whatsapp.svg" alt="" class="aspect-square w-12">
 			<span>Whatsapp<br />991 351 239</span>
 		</article>
 		<article class="flex gap-2">
-			<img src="/public/img/icons/phone.svg" alt="" class="aspect-square w-12">
+			<img src="/img/icons/phone.svg" alt="" class="aspect-square w-12">
 			<span>Central telefonica<br />281-0594</span>
 		</article>
 	</section>
 	<section class="flex gap-4 items-center">
 		<a href="" class="hover:-translate-y-1 transition ease-in-out duration-300">
-			<img src="/public/img/icons/facebook.svg" alt="" class="aspect-square w-12">
+			<img src="/img/icons/facebook.svg" alt="" class="aspect-square w-12">
 		</a>
 		<a href="" class="hover:-translate-y-1 transition ease-in-out duration-300">
-			<img src="/public/img/icons/instagram.svg" alt="" class="aspect-square w-11">
+			<img src="/img/icons/instagram.svg" alt="" class="aspect-square w-11">
 		</a>
 		<a href="" class="hover:-translate-y-1 transition ease-in-out duration-300">
-			<img src="/public/img/icons/mail.svg" alt="" class="aspect-square w-12">
+			<img src="/img/icons/mail.svg" alt="" class="aspect-square w-12">
 		</a>
     <Modal textButton="¡Pida su cita ahora!">
       <EmailForm client:visible/>
@@ -34,11 +34,11 @@ import Modal from "./Modal.astro";
 </header>
 <nav class="sticky top-[-1px] pt-[calc(1em + 1px)] px-10 flex justify-between items-center z-50 py-2 rounded-b-[20px] bg-white transition-all" id="hdr">
 	<a href="/" class="flex items-center gap-4">
-		<img src="/public/img/main-icon.webp" alt="" class="rounded-full aspect-square w-14 lg:w-20 mx-auto"/>
+		<img src="/img/main-icon.webp" alt="" class="rounded-full aspect-square w-14 lg:w-20 mx-auto"/>
 		<span class="text-xl font-semibold uppercase hidden lg:inline">Centro medico<br/>La Trinidad</span>
 	</a>
 	<button id="menu" class="block md:hidden rounded-lg active:bg-[#d5eef1] bg-[#acf1bd]">
-		<img id="icon_menu" src="/public/img/icons/menu.svg" alt="" class="w-10">
+		<img id="icon_menu" src="/img/icons/menu.svg" alt="" class="w-10">
 	</button>
 	<ul class="gap-4 items-center text-center hidden md:flex text-xs lg:text-base">
 		<Anchor text="Inicio" href="/" />
@@ -68,16 +68,16 @@ import Modal from "./Modal.astro";
   menu.addEventListener('click',()=>{
     menuOpen = !menuOpen
     if (menuOpen) {
-      icon_menu.src = '/public/img/icons/close.svg';
+      icon_menu.src = '/img/icons/close.svg';
       bar.classList.add('active')
     } else {
-      icon_menu.src = '/public/img/icons/menu.svg';
+      icon_menu.src = '/img/icons/menu.svg';
       bar.classList.remove('active')
     }
   })
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 768) {
-      icon_menu.src = '/public/img/icons/menu.svg';
+      icon_menu.src = '/img/icons/menu.svg';
       bar.classList.remove('active');
       menuOpen = false;
     }
