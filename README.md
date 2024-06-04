@@ -92,7 +92,7 @@
 >composer install
 >```
 >Luego necesitarías las bases de datos, está registrado para ejecutar en una base de datos de MySQL, pero puedes cambiarla en un archivo .env en la carpeta /api (DB_VENDOR), junto a número de puerto (DB_PORT), un usuario (DB_USERNAME) y contraseña (DB_PASSWORD)  
->![Entorno de Laravel](/public/img/Screenshots/entorno.png)
+>![Entorno de Laravel](/public/img/Screenshots/entorno5.png)
 >
 >Ahora puedes probar a crear tu base de datos manualmente, o ejecutando el siguiente comando:
 >```
