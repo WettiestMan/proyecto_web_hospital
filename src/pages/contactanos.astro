@@ -1,5 +1,4 @@
 ---
-import FormCitas from "@/components/FormCitas.astro"
 import EmailForm from "@/components/EmailForm"
 import Layout from "@/layouts/Layout.astro"
 ---
@@ -43,7 +42,7 @@ import Layout from "@/layouts/Layout.astro"
             </div>
         </section>
         <section class="p-5 bg-[#acf1bd] text-[#003449] rounded-r-lg flex-1 flex flex-col justify-center">
-            <EmailForm client:visible/>
+            <EmailForm transition:persist client:load/>
         </section>
     </main>
 </Layout>
