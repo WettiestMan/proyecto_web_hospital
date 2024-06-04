@@ -13,9 +13,9 @@ const {servicio, src, p, boton} = Astro.props
         <a class=`bg-[#acf1bd] font-semibold text-[#003449] rounded-xl text-center ${boton ? "p-2":""}` href="">{boton ? "explorar":""}</a>
     </div>
     <section class="flex items-center rounded-lg bg-[#165269] justify-center">
-        <p class="p-2">{p}</p>
+        <p class="p-4">{p}</p>
         <picture class="flex-[90%]">
-            <img src=`/public/img/Servicios/${src}` alt="" class="rounded-r-lg bg-white">
+            <img src=`/public/img/Servicios/${src}` alt="" class="rounded-r-lg bg-white w-full">
         </picture>
     </section>
 </article>
