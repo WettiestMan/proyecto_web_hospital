@@ -1,0 +1,29 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Policlínico La Trinidad | Resultados de laboratorio">
+    <main>
+        <div id="txt"></div>
+        <script>
+            document.addEventListener("astro:page-load", () => {
+                fetch("http://localhost:8000/api/farmacos")
+                .then((response) => {
+                    if(response.ok){
+                        response.text().then((msg) => {
+                            let nice = msg;
+                            const division = document.getElementById("txt");
+                            if(division !== null)
+                                division.innerHTML += nice;
+                        });
+                    } else {
+                        alert("HTTP response not OK");
+                    }
+                })
+                .catch((err) => {
+                    alert(`Error trying to fetch response from the server: ${err.message}`);
+                })
+            });
+        </script>
+    </main>
+</Layout>
