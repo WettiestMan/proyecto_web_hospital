@@ -35,9 +35,9 @@ const Next = () => (
 );
 
 const playList = [
-  "/public/music/msc01.mp3",
-  "/public/music/msc02.mp3",
-  "/public/music/msc03.mp3"
+  "/music/msc01.mp3",
+  "/music/msc02.mp3",
+  "/music/msc03.mp3"
 ];
 
 export function SongPlayer() {
