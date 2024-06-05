@@ -18,25 +18,11 @@ class FarmacosController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage. (don't need it, i'm just gonna fetch
-     * stuff from a json)
-     */
-    /*public function store(Request $request)
-    {
-        //
-    }*/
-
-    /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        //
         $farmaco = DB::table('farmacos')->where('id_farmaco', intval($id))->first();
-        
-        if($farmaco === null)
-            return `no existe`;
-
         return  $farmaco;
     }
 
@@ -53,6 +39,17 @@ class FarmacosController extends Controller
      * wanna fetch stuff)
      */
     /*public function destroy(string $id)
+    {
+        //
+    }*/
+
+    
+
+    /**
+     * Store a newly created resource in storage. (don't need it, i'm just gonna fetch
+     * stuff from a json)
+     */
+    /*public function store(Request $request)
     {
         //
     }*/

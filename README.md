@@ -55,7 +55,8 @@
 >
 >Obviamente todo esto necesita de **PHP**, aunque si tienes XAMPP, lo más probable es que también tengas PHP con el.
 >En todo caso, instala PHP y añade la carpeta en donde está a tu PATH porque vamos a necesitarlo para
->algunos comandos.
+>algunos comandos. (También te recomiendo instalar 7zip en tu computadora, porque Composer usa 7zip para extraer paquetes descargados de su
+>repositorio. Puedes revisar la sección **Solución de problemas** para más información).
 >
 >### Incluyendo una carpeta a PATH
 >En general, tu añades una carpeta a PATH para que todos sus ejecutables dentro de la dicha carpeta puedan
@@ -119,6 +120,13 @@
 >utilizar en Astro con ```fetch(http://localhost:8000/api/farmacos)```
 >
 >![Datos de backend](/public/img/Screenshots/datos.png)
+>### Solución de problemas
+>**git was not found in your PATH, skipping source download** al usar ```composer install```  
+>Para este problema existen 3 soluciones, puedes escoger una de ellas (o puedes hacer todas si quieres)
+> 1) Descarga 7zip y añadelo a tu PATH (Está en C:\Program Files\7-zip en una instalación usual)  
+> 2) Busca tu archivo php.ini (En PHP con XAMPP está en C:\xampp\php), y ábrelo con un editor de texto.
+> Busca la siguiente línea ```;extension=zip``` y quítale el punto y coma.  
+> 3) Añade Git a tu PATH (Está en C:\Program Files\Git\bin en una instalación usual)
 
 <!-- ## 🚀 Project Structure
 

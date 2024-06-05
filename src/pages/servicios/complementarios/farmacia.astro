@@ -1,0 +1,104 @@
+---
+import Layout from "@/layouts/Layout.astro"
+---
+
+<Layout title="Policlínico La Trinidad | Farmacia">
+    <h1 class="lg:text-7xl text-4xl font-black text-center mb-4 mt-8">Farmacia</h1>
+    <section class="mt-8 flex flex-col md:flex-row gap-8 justify-center mb-5">
+        <section class="flex flex-col gap-4 mb-8 justify-center mx-auto">
+            <p class="bg-[#003449] p-4 rounded-lg max-w-screen-sm">En nuestra farmacia, buscamos contribuir con la salud, bienestar y seguridad de nuestros 
+                pacientes y brindar una atención eficiente y orientada a ellos.</p>
+            <p class="bg-[#b8d8db] p-4 rounded-lg max-w-screen-sm text-[#003449]">Somos un establecimiento reconocido por su capacidad de brindar atención
+                al paciente con buena atención, productos de calidad y precios justos:
+            </p>
+        </section>
+    </section>
+    <hr class="border-none text-transparent bg-gradient-to-r from-[#003449] h-1 mb-8 rounded-3xl"/>
+    <main>
+        <section>
+            <h1 class="text-2xl font-medium">Nuestros lista de fármacos</h1>
+            <table id="listaFarmacos">
+                <!-- Tabla según base de datos de fármacos -->
+            </table>
+            <script>
+                document.addEventListener('astro:page-load', () => {
+
+                    const FARMACO_NO_ATTRIBUTES: number = 7;
+                    const DYNATABLE_HEADERS: string[] = [
+                        'Id fármaco',
+                        'Nombre',
+                        'Compuesto',
+                        'Unidades por paq.',
+                        'Descripción',
+                        'Reg. sanitario',
+                        'Unidades disp.'
+                    ];
+
+                    async function getResponse(source: string) {
+                        const request = new Request(source ,
+                            {
+                                method: "GET",
+                                headers: {
+                                    'Accept': 'application/json'
+                                }
+                            }
+                        );
+
+                        const response = await fetch(request);
+                        return response.json();
+                    }
+
+                    function createTable() {
+                        const table = document.getElementById("listaFarmacos");
+                        getResponse('http://localhost:8000/api/farmacos')
+                            .then(medicinas => {
+                                while (table?.firstChild)
+                                    table.removeChild(table.firstChild);
+
+                                let headerRow = document.createElement('tr');
+                                for(let i: number = 0; i < FARMACO_NO_ATTRIBUTES; i++){
+                                    let tableHead = document.createElement('th');
+                                    tableHead.innerHTML += DYNATABLE_HEADERS[i];
+                                    headerRow.appendChild(tableHead);
+                                }
+                                table?.appendChild(headerRow);
+
+                                medicinas.forEach((value: any) => {
+                                    let cells = []
+                                    let row = document.createElement('tr');
+                                    for(let j: number = 0; j < FARMACO_NO_ATTRIBUTES; j++){
+                                        cells.push(document.createElement('td'));
+                                    }
+
+                                    cells[0].innerHTML += value.id_farmaco;
+                                    cells[1].innerHTML += value.nombre;
+                                    cells[2].innerHTML += value.compuesto;
+                                    cells[3].innerHTML += value.unidades_por_paquete;
+                                    cells[4].innerHTML += value.descripcion;
+                                    cells[5].innerHTML += value.reg_sanitario;
+                                    cells[6].innerHTML += value.stock;
+
+                                    for(let cell of cells)
+                                        row.appendChild(cell);
+
+                                    table?.appendChild(row);
+                                });
+                            })
+                            .catch(err => {
+                                alert("error al recuperar datos de la base de datos");
+                            });
+                    }
+
+                    createTable();
+                });
+            </script>
+        </section>
+    </main>
+</Layout>
+<style>
+table, th, td {
+    border: 1px solid #003449;
+    border-collapse: collapse;
+    width: 100%
+}
+</style>
