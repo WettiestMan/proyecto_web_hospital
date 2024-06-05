@@ -22,28 +22,6 @@ import Layout from "@/layouts/Layout.astro"
             </table>
             <script>
                 document.addEventListener('astro:page-load', () => {
-                    class Farmaco {
-                        readonly idFarmaco: number;
-                        readonly nombre: string;
-                        readonly compuesto: string;
-                        readonly unidadesPorPaquete: number;
-                        readonly descripcion: string;
-                        readonly regSanitario: string;
-                        readonly stock: number;
-
-                        constructor(idFarmaco: number, nombre: string, compuesto: string,
-                            unidadesPorPaquete: number, descripcion: string,
-                            regSanitario: string, stock: number)
-                        {
-                            this.idFarmaco = idFarmaco;
-                            this.nombre = nombre;
-                            this.compuesto = compuesto;
-                            this.unidadesPorPaquete = unidadesPorPaquete;
-                            this.descripcion = descripcion;
-                            this.regSanitario = regSanitario;
-                            this.stock = stock;
-                        }
-                    }
 
                     const FARMACO_NO_ATTRIBUTES: number = 7;
                     const DYNATABLE_HEADERS: string[] = [
@@ -55,9 +33,6 @@ import Layout from "@/layouts/Layout.astro"
                         'Reg. sanitario',
                         'Unidades disp.'
                     ];
-
-                    let tableData = [];
-                    let receivedOk = false;
 
                     async function getResponse(source: string) {
                         const request = new Request(source ,
@@ -77,7 +52,6 @@ import Layout from "@/layouts/Layout.astro"
                         const table = document.getElementById("listaFarmacos");
                         getResponse('http://localhost:8000/api/farmacos')
                             .then(medicinas => {
-                                receivedOk = true;
                                 while (table?.firstChild)
                                     table.removeChild(table.firstChild);
 
@@ -89,15 +63,6 @@ import Layout from "@/layouts/Layout.astro"
                                 }
                                 table?.appendChild(headerRow);
 
-                                /*const numElems: number = Object.keys(medicinas).length;
-                                for(let i: number = 0; i < numElems; i++){
-                                    let rowData = [];
-                                    //const medElems = Object.values(medicinas);
-                                    let row: HTMLTableRowElement = document.createElement('tr');
-                                    for(let j: number = 0; j < FARMACO_NO_ATTRIBUTES; j++){
-                                        let cell = document.createElement('td');
-                                    }
-                                }*/
                                 medicinas.forEach((value: any) => {
                                     let cells = []
                                     let row = document.createElement('tr');
@@ -120,7 +85,6 @@ import Layout from "@/layouts/Layout.astro"
                                 });
                             })
                             .catch(err => {
-                                receivedOk = false;
                                 alert("error al recuperar datos de la base de datos");
                             });
                     }
