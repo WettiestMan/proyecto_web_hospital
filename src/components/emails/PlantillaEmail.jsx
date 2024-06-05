@@ -6,7 +6,6 @@ import {
   Heading,
   Column,
   Html,
-  Img,
   Preview,
   Section,
   Text,
@@ -38,13 +37,6 @@ export const CodepenChallengersEmail = ({
     <Preview>Pedido de cita para el area de {Servicio}</Preview>
     <Body>
       <Container>
-        <Section>
-          <Img
-            src="public/img/main-icon.webp"
-            alt="Icono del Policlinico La Trinidad"
-            className="rounded-full w-24 mx-auto p-1"
-          />
-        </Section>
         <Section className="font-bold text-center">
           <Heading as="h2">
             Servicio pedido:
@@ -78,20 +70,11 @@ export const CodepenChallengersEmail = ({
                 <Text>{Telefono}</Text>
               </Section>
             </Column>
-            <Column className="w-32">
-              <Section className="p-0 m-0">
-                <Img
-                  src={`public/img/Servicios/${Servicio}.png`}
-                  alt={`Icono de ${Servicio}`} 
-                  className="w-48 mx-auto"
-                />
-              </Section>
-            </Column>
           </Row>
         </Section>
         <Hr className="border-none text-transparent bg-[#003449] h-1 rounded-3xl" />
         <Section>
-          <Text className="bg-black/20 px-10 py-5 text-pretty">
+          <Text className="bg-black/20 px-10 py-5 text-pretty mx-auto">
             {Comentario}
           </Text>
         </Section>
@@ -114,4 +97,6 @@ const button = {
   lineHeight: 1.5,
   borderRadius: "0.5em",
   padding: "12px 24px",
+  marginLeft: "auto",
+  marginRight: "auto"
 };
