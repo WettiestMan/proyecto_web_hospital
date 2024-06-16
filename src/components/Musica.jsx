@@ -41,16 +41,16 @@ const playList = [
 ];
 
 export function SongPlayer() {
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(false)
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const audioRef = useRef()
 
   useEffect(() => {
     audioRef.current.volume = .008
     audioRef.current.src = playList[currentSongIndex];
-    if (isPlaying) {
-      audioRef.current.play();
-    }
+    // if (isPlaying) {
+    //   audioRef.current.play();
+    // }
   }, [currentSongIndex]);
 
   useEffect(() => {
@@ -90,7 +90,7 @@ export function SongPlayer() {
       <picture className="group-hover:hidden">
         <IconPlayer />
       </picture>
-      <audio ref={audioRef} autoPlay/>
+      <audio ref={audioRef}/>
       <main className="flex-col p-2 gap-1 hidden group-hover:flex items-center">
         <section className="flex gap-2">
           <button className="rounded-full p-1 border-[#003449] border-2 hover:scale-105 active:bg-[#acf1bd] active:scale-100 transition-transform duration-100"

@@ -1,0 +1,20 @@
+---
+import CardNoticia from "./CardNoticia.astro";
+import { getPublicaciones } from '../services/postService';
+const publis = await getPublicaciones();
+---
+
+<ul class="grid grid-cols-2 gap-2">
+    {
+        publis.map((publi: {id: number; titulo: string; text: string; media: string}) => {
+            return (
+                <li class="bg-slate-800 p-3 rounded text-white">
+                    <h3>{publi.titulo}</h3>
+                    <span>Publicacion: {publi.id}</span>
+                    <p>{publi.text}</p>
+                    <img src="/" alt={publi.media}>
+                </li>
+            )
+        })
+    }
+</ul>

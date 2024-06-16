@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import { getNoticiaId } from "../api/publi"
+const {id} = Astro.params
+
+let noticia
+if(id){
+    noticia = await getNoticiaId({id})
+}
+
+---
+
+<Layout title="xd">
+    <article class="flex">
+        {noticia.id_farmaco}
+        {noticia.nombre}
+        {noticia.compuesto}
+        {noticia.unidades_por_paquete}
+        {noticia.descripcion}
+        {noticia.reg_sanitario}
+        {noticia.stock}
+    </article>
+</Layout>
