@@ -27,7 +27,7 @@ const ListPublicaciones = () => {
   }
   return (
     <>
-    <FormPublicaciones selectedPubli={selectedPubli}/>
+    <FormPublicaciones selectedPubli={selectedPubli} fetchPublicaciones={fetchPublicaciones}/>
     <section className="grid grid-cols-2 gap-2">
       {
         publis.map(publi => (

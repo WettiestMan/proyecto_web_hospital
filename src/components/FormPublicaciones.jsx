@@ -1,48 +1,43 @@
 import { useState, useEffect } from 'react';
 import { addPublicacion, updatePublicacion } from '../services/postService';
 
-const FormPublicaciones = ({selectedPubli}) => {
+const FormPublicaciones = ({selectedPubli, fetchPublicaciones}) => {
   const [titulo, setTitulo] = useState('');
   const [text, setText] = useState('');
   const [media, setMedia] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
     if (selectedPubli) {
       setTitulo(selectedPubli.titulo)
       setText(selectedPubli.text)
       setMedia(selectedPubli.media)
+      setIsEditing(true);
     }
   }, [selectedPubli]);
 
-  const handleEdit = async(e) => {
-    //Falta funcionalidad de editar publicacion, no funca si hago lo mismo que con handleSubmit, ¿porq? ni idea :v
-    //Error -> el formData aparentemente llega vacia a la API :'v
-    //selectedPubli.id -> esta perfect
-    const formData = new FormData();
-    formData.append('titulo', titulo);
-    formData.append('text', text);
-    formData.append('media', media);
-    console.log(formData)
-    console.log(selectedPubli.id)
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('titulo', titulo);
-    formData.append('text', text);
-    formData.append('media', media);
-    try {
-      console.log(formData)
+    const formData = new FormData(e.target);
+    
+    if (isEditing) {
+      await updatePublicacion(formData, selectedPubli.id);
+      setIsEditing(false);
+    } else {
       await addPublicacion(formData);
-      setTitulo('');
-      setText('');
-      setMedia('');
-      alert('Publicación agregada con éxito');
-    } catch (error) {
-      console.error('Error al agregar la publicación:', error);
-      alert('Hubo un error al agregar la publicación');
     }
+
+    setTitulo('');
+    setText('');
+    setMedia('');
+    fetchPublicaciones();
+  };
+
+  const handleCancel = () => {
+    setTitulo('');
+    setText('');
+    setMedia('');
+    setIsEditing(false);
   };
 
   return (
@@ -80,9 +75,15 @@ const FormPublicaciones = ({selectedPubli}) => {
           className="mt-1 block w-full p-2 border rounded"
         />
       </div>
-      <div className=''>
-        <button className="px-4 py-2 bg-blue-600 text-white rounded">Agregar Publicación</button>
-        <button onClick={handleEdit} type='button' className="px-4 py-2 bg-blue-600 text-white rounded">Editar Publicación</button>
+      <div>
+        <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">
+          {isEditing ? 'Editar Publicación' : 'Agregar Publicación'}
+        </button>
+        {isEditing && (
+          <button type="button" onClick={handleCancel} className="px-4 py-2 bg-gray-600 text-white rounded">
+            Cancelar
+          </button>
+        )}
       </div>
     </form>
   );
