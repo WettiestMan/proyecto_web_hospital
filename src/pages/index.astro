@@ -1,5 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { getPublicaciones } from '@/services/postService';
+const { publicaciones } = await getPublicaciones();
 
 class ImageInfo{
     source: string;
@@ -10,10 +12,10 @@ class ImageInfo{
         this.alternative = alternative;
     }
 }
-let images: ImageInfo[] = [new ImageInfo("../img/Inicio/slide1.jpg", "Servicio de pediatría por Dra. Melissa Herrera: Jueves 2 de mayo"),
+let images: ImageInfo[] = [new ImageInfo("../img/Inicio/slide4.jpg", "Servicio de pediatría por Dra. Melissa Herrera: Jueves 2 de mayo"),
           new ImageInfo("../img/Inicio/slide2.jpg", "Servicio de psiquiatría por Dr. Henry Quispe Wong: Sábado 18 de mayo"),
           new ImageInfo("../img/Inicio/slide3.jpg", "Control de diabetes con Lic. Maria Luyo Muchotrigo: Viernes 26 de abril"), 
-          new ImageInfo("../img/Inicio/slide4.jpg", "Control de crecimiento y desarrollo con Lic. Silvana Hernández: Miércoles 24 de abril")];
+          new ImageInfo("../img/Inicio/slide1.jpg", "Control de crecimiento y desarrollo con Lic. Silvana Hernández: Miércoles 24 de abril")];
 ---
 <Layout title="Centro Medico | Policlinico La Trinidad">
     <main>
@@ -86,6 +88,19 @@ let images: ImageInfo[] = [new ImageInfo("../img/Inicio/slide1.jpg", "Servicio d
                 });
             </script>
         </section>
+        <section class="max-w-screen-lg mx-auto mt-16">
+            <h2 class="uppercase font-extrabold text-4xl text-center mb-16 text-[#0b2935]">Ultimas publicaciones</h2>
+            {
+                publicaciones.map((publi : {id:number; titulo:string; contenido:string; imagen:string}) => (
+                    <article class="p-2 mb-4 rounded">
+                        <h3 class="text-center uppercase text-xl font-semibold mb-2">{publi.titulo}</h3>
+                        <p class="bg-[#003449] mb-4 rounded p-2 max-w-4xl mx-auto">{publi.contenido}</p>
+                        <img src={`http://localhost:8000/storage/${publi.imagen}`} alt={publi.imagen} class="h-auto mx-auto max-w-3xl"/>
+                        <hr class="border-none text-transparent bg-[#003449] h-[2px] my-4 rounded-3xl -mx-10"/>
+                    </article>
+                ))
+            }
+        </section>
         <section class="grid grid-cols-1 min-[0px]:max-[639px]:grid-rows-2 sm:grid-cols-2 bg-mint-green w-full m-auto border-0 rounded-xl">
             <article class="flex flex-col sm:flex-row items-center m-auto min-w[321px]:h-full max-w[320px]:w-full">
                 <div class="p-4 w-full min-[0px]:max-sm:h-fit items-center relative">
@@ -97,7 +112,7 @@ let images: ImageInfo[] = [new ImageInfo("../img/Inicio/slide1.jpg", "Servicio d
             </article>
             <article class="w-full grid grid-cols-1 bg-light-blue items-center justify-center sm:rounded-r-xl min-[0px]:max-[639px]:rounded-b-xl">
                 <button class="btn ease-in-out duration-300 QuickAccessButtons" onclick="location.href ='/resultados'">Resultados de<br>laboratorio</button>
-                <button class="btn ease-in-out duration-300 QuickAccessButtons" onclick="location.href ='/servicios/complementarios/farmacia'">Farmacia</button>
+                <button class="btn ease-in-out duration-300 QuickAccessButtons" onclick="location.href ='/servicios/de-apoyo/farmacia'">Farmacia</button>
                 <button class="btn ease-in-out duration-300 QuickAccessButtons">Contáctanos</button>
             </article>
         </section>

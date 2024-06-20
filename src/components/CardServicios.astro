@@ -10,7 +10,7 @@ const {servicio, src, p, boton} = Astro.props
 <article>
     <div class="flex justify-between mb-2 items-center">
         <h3 class="text-white font-bold text-xl" id={servicio}>{servicio}</h3>
-        <a class=`bg-[#acf1bd] font-semibold text-[#003449] rounded-xl text-center ${boton ? "p-2":""}` href="">{boton ? "explorar":""}</a>
+        <a class=`bg-[#acf1bd] font-semibold text-[#003449] rounded-xl text-center ${boton ? "p-2":""}` href={`./${servicio}`}>{boton ? "explorar":""}</a>
     </div>
     <section class="flex items-center rounded-lg bg-[#165269] justify-center">
         <p class="p-4">{p}</p>
