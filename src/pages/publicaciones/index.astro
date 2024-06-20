@@ -1,8 +1,24 @@
 ---
-import Noticias from "@/components/noticias.astro"
 import Layout from "@/layouts/Layout.astro"
+import { getPublicaciones } from '@/services/postService';
+const { publicaciones } = await getPublicaciones();
 ---
 
 <Layout title="xd">
-    <Noticias/>
+    <main>
+    {
+        publicaciones.map((publi : {id:number; titulo:string; contenido:string; imagen:string}) => (
+            <article>
+                <div class="relative flex py-4 items-center">
+                    <h3 class="absolute left-1/2 transform -translate-x-1/2 text-center">{publi.titulo}</h3>
+                    <div class="ml-auto">
+                        <a href={`/publicaciones/${publi.id}`} class="bg-blue-700 rounded-lg p-2">Ver publicacion</a >
+                    </div>
+                </div>
+                <p>{publi.contenido}</p>
+                <img src={`http://localhost:8000/storage/${publi.imagen}`} alt={publi.imagen} />
+            </article>
+        ))
+    }
+    </main>
 </Layout>

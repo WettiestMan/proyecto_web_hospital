@@ -5,34 +5,32 @@ export const getPublicaciones = async () => {
             "Content-Type": "application/json",
         },
     });
-    const data = await res.json();
-    console.log(data)
-    return data;
+    const data = await res.json()
+    return data
 };
 
-export const getPublicacionById = async (id: number) => {
+export const getPublicacionById = async (id: string) => {
     const res = await fetch(`http://localhost:8000/api/publicaciones/${id}`,{
         method: "GET",
         headers: {
             "Content-Type": "application/json",
         },
     });
-    const data = await res.json();
-    return data;
+    const data = await res.json()
+    return data.publicacion
 };
 
 export const addPublicacion = async (formData: FormData) => {
     const res = await fetch("http://localhost:8000/api/publicaciones", {
         method: "POST",
         body: formData,
-    });
+    })
 
     if (!res.ok) {
         throw new Error(`Error: ${res.statusText}`);
     }
     const data = await res.json();
-    console.log(data)
-    return data;
+    return data
 };
 
 export const deletePublicacion = async (id:number) => {
@@ -45,18 +43,14 @@ export const deletePublicacion = async (id:number) => {
     }
 
     const data = await res.json();
-    console.log(data)
-    return data;
+    return data
 };
 
 export const updatePublicacion = async(formData:FormData, id:number) => {
-    console.log(id)
     const res = await fetch(`http://localhost:8000/api/publicacionesupdate/${id}`,{
         method: "POST",
         body: formData
     })
-    console.log(id)
     const data = await res.json();
-    console.log(data)
     return data;
 }

@@ -1,23 +1,23 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import { getNoticiaId } from "../api/publi"
+import { getPublicacionById } from '@/services/postService';
 const {id} = Astro.params
 
-let noticia
-if(id){
-    noticia = await getNoticiaId({id})
-}
+let publi
 
+if(id){
+    publi = await getPublicacionById(id);
+}
 ---
 
 <Layout title="xd">
-    <article class="flex">
-        {noticia.id_farmaco}
-        {noticia.nombre}
-        {noticia.compuesto}
-        {noticia.unidades_por_paquete}
-        {noticia.descripcion}
-        {noticia.reg_sanitario}
-        {noticia.stock}
-    </article>
+    <div class="relative flex py-4 items-center justify-between">
+        <a class="p-2 rounded-lg bg-blue-600" href="/publicaciones">Volver</a>
+        <h3 class="absolute left-1/2 transform -translate-x-1/2 text-center">{publi.titulo}</h3>
+        <div class="ml-auto">
+            <time datetime="">{publi.created_at}</time>
+        </div>
+    </div>
+    <p>{publi.contenido}</p>
+    <img src={`http://localhost:8000/storage/${publi.imagen}`} alt={publi.imagen} />
 </Layout>
