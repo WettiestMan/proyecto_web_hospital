@@ -6,6 +6,7 @@ export const getPublicaciones = async () => {
         },
     });
     const data = await res.json();
+    console.log(data)
     return data;
 };
 
@@ -30,11 +31,12 @@ export const addPublicacion = async (formData: FormData) => {
         throw new Error(`Error: ${res.statusText}`);
     }
     const data = await res.json();
+    console.log(data)
     return data;
 };
 
 export const deletePublicacion = async (id:number) => {
-    const res = await fetch(`http://localhost:8000/api/publicaciones/${id}`, {
+    const res = await fetch(`http://localhost:8000/api/publicacionesdelete/${id}`, {
         method: "DELETE",
     });
 
@@ -49,8 +51,8 @@ export const deletePublicacion = async (id:number) => {
 
 export const updatePublicacion = async(formData:FormData, id:number) => {
     console.log(id)
-    const res = await fetch(`http://localhost:8000/api/publicaciones/${id}`,{
-        method: "PUT",
+    const res = await fetch(`http://localhost:8000/api/publicacionesupdate/${id}`,{
+        method: "POST",
         body: formData
     })
     console.log(id)

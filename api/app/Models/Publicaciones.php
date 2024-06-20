@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Publicaciones extends Model
 {
     use HasFactory;
-
-    public $timestamps = false;
-
-    protected $fillable = [ 'titulo', 'text', 'media' ];
+    
+    protected $fillable = [
+        'titulo',
+        'imagen',
+        'contenido'
+    ];
 }

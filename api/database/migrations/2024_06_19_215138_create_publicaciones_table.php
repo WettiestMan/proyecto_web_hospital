@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('publicaciones', function (Blueprint $table) {
-            $table->integer('id', true, true)->from(100000)->primary(true);
+            $table->id();
             $table->string('titulo');
-            $table->longText('text');
-            $table->string('media');
+            $table->string('imagen');
+            $table->text('contenido');
+            $table->timestamps();
         });
     }
 
