@@ -90,8 +90,6 @@ class PublicacionesController extends Controller
                     'message' => 'Publicacion no encontrada'
                 ],404);
             }
-            // echo "request : $request->titulo";
-            // echo "contenido : $request->contenido";
             $publicacion->titulo = $request->titulo;
             $publicacion->contenido = $request->contenido;
             if($request->imagen){

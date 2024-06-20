@@ -1,5 +1,5 @@
-import { render } from "@react-email/render";
 import PlantillaEmail from "./emails/PlantillaEmail";
+import { render } from "@react-email/render";
 import { useState, useRef, useEffect } from "react";
 
 function EmailForm() {
@@ -84,7 +84,6 @@ function EmailForm() {
                 })
             });
             const data = await res.json();
-            console.log(data);
             
             setIsSubmitting(true);
             setTimeLeft(delay / 1000);
