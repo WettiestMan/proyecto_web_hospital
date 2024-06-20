@@ -2,127 +2,136 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Publicaciones;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-
+use App\Models\Publicaciones;
+use App\Http\Requests\PublicacionesStoreRequest;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class PublicacionesController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         $publicaciones = Publicaciones::all();
-        return response()->json($publicaciones, 200);
+
+        return response()->json([
+            'publicaciones' => $publicaciones
+        ], 200);
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(PublicacionesStoreRequest $request)
+    {
+        try{
+            $imagenName = Str::random(32).".".$request->imagen->getClientOriginalExtension();
+            Publicaciones::create([
+                'titulo' => $request->titulo,
+                'imagen' => $imagenName,
+                'contenido' => $request->contenido
+            ]);
+            Storage::disk('public')->put($imagenName, file_get_contents($request->imagen));
+            return response()->json([
+                'message' => 'Publicacion creada correctamente'
+            ],200);
+        } catch(\Exception $e) {
+            return response()->json([
+                'message' => 'Algo ah ocurrido mal :('
+            ],500);
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     */
     public function show($id)
     {
         $publicacion = Publicaciones::find($id);
-        if(!$publicacion){
-            $data = [
-                "message" => "Publicacion no encontrada",
-                "status" => 400
-            ];
-            return response()->json($data,400);
+        if(!$publicacion) {
+            return response()->json([
+                'message' => 'Publicacion no encontrada'
+            ],404);
         }
-        $data = [
-            "Publicacion" => $publicacion,
-            "status" => 200
-        ];
-        return response()->json($data,200);
+
+        return response()->json([
+            'publicacion' => $publicacion
+        ],200);
     }
 
-    public function store(Request $request)
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
     {
-        $validator = Validator::make($request->all(),[
-            "titulo" => "required",
-            "text" => "required",
-            "media" => "required"
-        ]);
-        if($validator->fails()){
-            $data=[
-                "message" => "Error en la validacion de los datos",
-                "errors" => $validator->errors(),
-                "status" => 400
-            ];
-            return response()->json($data, 400);
-        }
-        $publicaciones = Publicaciones::create([
-            "titulo" => $request->titulo,
-            "text" => $request->text,
-            "media" => $request->media,
-        ]);
-        if(!$publicaciones){
-            $data = [
-                "message" => "Error al crear la publicacion",
-                "status" => 400
-            ];
-            return response()->json($data,400);
-        }
-
-        $data = [
-            "publicacion" => $publicaciones,
-            "status" => 200
-        ];
-
-        return response()->json($data, 200);
+        //
     }
 
-    public function update(Request $request, $id)
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(PublicacionesStoreRequest $request, $id)
     {
-        $publicacion = Publicaciones::find($id);
-        if(!$publicacion){
-            $data = [
-                "message" => "Publicacion no encontrada",
-                "status" => 400
-            ];
-            return response()->json($data,400);
+        try{
+            $publicacion = Publicaciones::find($id);
+            if(!$publicacion) {
+                return response()->json([
+                    'message' => 'Publicacion no encontrada'
+                ],404);
+            }
+            // echo "request : $request->titulo";
+            // echo "contenido : $request->contenido";
+            $publicacion->titulo = $request->titulo;
+            $publicacion->contenido = $request->contenido;
+            if($request->imagen){
+                $storage = Storage::disk('public');
+                if($storage->exists($publicacion->imagen)){
+                    $storage->delete($publicacion->imagen);
+                }
+                $imagenName = Str::random(32).".".$request->imagen->getClientOriginalExtension();
+                $publicacion->imagen = $imagenName;
+                $storage->put($imagenName, file_get_contents($request->imagen));
+            }
+            $publicacion->save();
+            return response()->json([
+                'message' => 'Publicacion actualizada correctamente'
+            ],200);
+        } catch(\Exception $e) {
+            return response()->json([
+                'message' => 'Algo ah ocurrido mal :('
+            ],500);
         }
-        $validator = Validator::make($request->all(),[
-            "titulo" => "required",
-            "text" => "required",
-            "media" => "required"
-        ]);
-        if($validator->fails()){
-            $data=[
-                "message" => "Error en la validacion de los datos",
-                "errors" => $validator->errors(),
-                "status" => 400
-            ];
-            return response()->json($data, 400);
-        };
-        $publicacion->titulo = $request->titulo;
-        $publicacion->text = $request->text;
-        $publicacion->media = $request->media;
-
-        $publicacion->save();
-
-        $data = [
-            "message" => "Publicacion actualizada",
-            "publicacion" => $publicacion,
-            "status" => 200
-        ];
-
-        return response()->json($data, 200);
     }
 
-    public function delete($id)
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
     {
         $publicacion = Publicaciones::find($id);
         if(!$publicacion){
-            $data = [
-                "message" => "Publicacion no encontrada",
-                "status" => 400
-            ];
-            return response()->json($data,400);
+            return response()->json([
+                'message' => 'Publicacion no encontrada'
+            ],404);
         }
-
+        $storage = Storage::disk('public');
+        if($storage->exists($publicacion->imagen)){
+            $storage->delete($publicacion->imagen);
+        }
         $publicacion->delete();
-
-        $data = [
-            "message" => "Publicacion eliminada",
-            "status" => 200
-        ];
-        return response()->json($data,200);
+        return response()->json([
+            'message' => 'Publicacion eliminada correctamente'
+        ],200);
     }
 }
