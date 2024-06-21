@@ -48,7 +48,7 @@ class PublicacionesController extends Controller
             ],200);
         } catch(\Exception $e) {
             return response()->json([
-                'message' => 'Algo ah ocurrido mal :('
+                'message' => $e->getMessage()
             ],500);
         }
     }
