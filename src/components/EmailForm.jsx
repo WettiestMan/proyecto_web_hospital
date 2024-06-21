@@ -70,7 +70,7 @@ function EmailForm() {
         );
 
         try {
-            const res = await fetch("/api/sendEmail.json", {
+            await fetch("/api/sendEmail.json", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -82,9 +82,7 @@ function EmailForm() {
                     html: finalHtml,
                     text: finalText
                 })
-            });
-            const data = await res.json();
-            
+            })
             setIsSubmitting(true);
             setTimeLeft(delay / 1000);
             formRef.current.reset();
