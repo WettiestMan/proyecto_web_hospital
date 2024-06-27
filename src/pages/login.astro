@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro"
+---
+
+<Layout title="Inicio de sesión | Administrador de publicaciones">
+    <form id="loginForm">
+        <label for="username">Nombre de usuario</label>
+        <input type="text" placeholder="Ingrese su nombre de usuario" name="username" required>
+
+        <label for="pswd">Contraseña</label>
+        <input type="password" placeholder="Ingrese su contraseña" name="pswd" required>
+
+        <button type="submit" id="iniciarSesion">Iniciar sesión</button>
+        <p class="invisible text-red-500" id="sesionIncorrecta">
+            Inicio de sesión incorrecto, revise sus credenciales e intente de nuevo.
+        </p>
+        <p class="invisible text-red-500" id="errorInicioSesion">
+            Hubo un error al tratar de iniciar sesión, inténtelo de nuevo más tarde.
+        </p>
+    </form>
+    <script>
+        document.addEventListener('astro:page-load', () => {
+            /*document.getElementById('iniciarSesion')?.addEventListener('click', () => {
+                const form = document.getElementById('loginForm');
+
+                
+            });*/
+            const form = document.querySelector('#loginForm');
+
+            form?.addEventListener('submit',(evt) => {
+                
+            });
+        });
+    </script>
+</Layout>
