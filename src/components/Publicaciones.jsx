@@ -57,16 +57,16 @@ const Publicaciones = () => {
         <main className='grid grid-cols-2 gap-3'>
             {
                 publis.map(publi => (
-                    <article key={publi.id} className='bg-slate-600 p-2 rounded'>
-                        <div>
-                            <h3>{publi.titulo}</h3>
-                            <div>
-                                <button onClick={() => handleEdit(publi)}>Editar</button>
-                                <button onClick={() => handleDelete(publi.id)}>Eliminar</button>
+                    <article key={publi.id} className='bg-slate-600 py-4 px-10 rounded w-auto h-[30rem] overflow-ellipsis overflow-hidden'>
+                        <div className='flex justify-between items-center mb-4'>
+                            <h3 className='text-2xl font-semibold text-white'>{publi.titulo}</h3>
+                            <div className='flex gap-6'>
+                                <button className='bg-blue-600 p-2 rounded-lg' onClick={() => handleEdit(publi)}>Editar</button>
+                                <button className='bg-red-600 p-2 rounded-lg' onClick={() => handleDelete(publi.id)}>Eliminar</button>
                             </div>
                         </div>
+                        <img className='h-72 w-auto mx-auto mb-4' src={`http://localhost:8000/storage/${publi.imagen}`} alt={publi.imagen} />
                         <p>{publi.contenido}</p>
-                        <img src={`http://localhost:8000/storage/${publi.imagen}`} alt={publi.imagen} />
                     </article>
                 ))
             }

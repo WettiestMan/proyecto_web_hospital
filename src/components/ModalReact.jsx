@@ -57,7 +57,7 @@ const ModalReact = ({ getAllPublicaciones, selectedPubli, isModalOpen, handleMod
     return (
         <dialog ref={formRef} className='bg-white p-5 rounded-lg backdrop:backdrop-blur-sm w-[1000px] h-auto'>
             <button onClick={handleCloseButton} className="top-7 right-7 fixed bg-black rounded-full p-2 bg-opacity-30">
-                <img src="/img/icons/close.svg" alt=""/>
+                <img src="/img/icons/close.svg" alt="Icono de cerrar"/>
             </button>
             <form onSubmit={handleSubmit} className="w-full p-4 border rounded">
                 <div className="mb-4">

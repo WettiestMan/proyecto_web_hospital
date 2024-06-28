@@ -1,8 +1,8 @@
 ---
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 import '@fontsource-variable/onest';
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 import Musica from "@/components/Musica"
 interface Props {
   title: string;
@@ -10,41 +10,34 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-        name="description"
-        content="Centro medico parroquial La Trinidad, policlinico integral tanto para adultos como niños. Servicios de Salud con Especialidades Médicas con 26 años de experiencia al servicio del pueblo. Servicios de apoyo al diagnostico como Laboratorio, Electrocardiograma, Ecografias. Terapias de Lenguaje, Aprendizaje, Física. Evaluaciones en Psicología. Programa de Diabéticos e Hipertensos. Tratamiento de pie diabetico, Ulceras vericosas. Odontología. Podología. Farmacia."
-        />
-        <meta name="viewport" content="width=device-width" />
-        <link
-        rel="icon"
-        type="image/webp"
-        href="/img/main-icon.webp"
-        />
-        <title>{title}</title>
-        <ViewTransitions />
-    </head>
-    <body>
-        <!-- <Header/> -->
-        <!-- <Musica client:load transition:persist/> -->
-        <main class="mx-5 md:mx-10 lg:mx-20">
-            <slot />
-        </main>
-        <!-- <Footer /> -->
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro medico parroquial La Trinidad, policlinico integral tanto para adultos como niños. Servicios de Salud con Especialidades Médicas con 26 años de experiencia al servicio del pueblo. Servicios de apoyo al diagnostico como Laboratorio, Electrocardiograma, Ecografias. Terapias de Lenguaje, Aprendizaje, Física. Evaluaciones en Psicología. Programa de Diabéticos e Hipertensos. Tratamiento de pie diabetico, Ulceras vericosas. Odontología. Podología. Farmacia.">
+    <link rel="shortcut icon" href="/img/main-icon.webp" type="image/webp">
+    <title>{title}</title>
+    <ViewTransitions/>
+</head>
+<body>
+    <Header/>
+    <!-- <Musica client:load transition:persist/> -->
+    <main class="mx-5 md:mx-10 lg:mx-20">
+        <slot />
+    </main>
+    <!-- <Footer/> -->
+</body>
 </html>
 
 <style is:global>
     body {
-    font-family: 'Onest Variable',Verdana, Tahoma, system-ui;
+        font-family: 'Onest Variable',Verdana, Tahoma, system-ui;
     }
-    ::-webkit-scrollbar {
+    /* ::-webkit-scrollbar {
     display: none;
-    }
-    p{
+    } */
+    p {
         color: #acf1bd;
         text-wrap: pretty;
         line-height: 1.625;

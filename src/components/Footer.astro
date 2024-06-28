@@ -1,14 +1,12 @@
 ---
 import AnchorIcon from "./AnchorIcon.astro";
-import AnchorSimple from "./AnchorSimple.astro";
-import EmailForm from "./EmailForm";
-import Modal from "./Modal.astro";
+import Anchor from "./Anchor.astro";
 ---
 
 <footer class="bg-[url(/img/backgrounds/bg-footer.svg)] bg-no-repeat bg-cover pt-36 -mt-12 text-center text-white pb-8 px-8">
     <main class="flex flex-col md:flex-row justify-between items-center text-left px-10 lg:px-18">
         <section class="flex flex-col lg:flex-row gap-1 lg:gap-5 items-center mb-5 md:mb-0">
-            <img src="/img/main-icon.webp" alt="" class="aspect-square lg:w-32 rounded-full w-24"/>
+            <img src="/img/main-icon.webp" alt="Icono del policlinico La Trinidad" class="aspect-square lg:w-32 rounded-full w-24"/>
             <section class="md:hidden lg:flex gap-2 flex flex-col md:flex-row">
                 <article class="flex lg:flex-col flex-row gap-1">
                     <AnchorIcon href="" img="/footer/facebook" />
@@ -21,14 +19,14 @@ import Modal from "./Modal.astro";
             </section>
         </section>
         <ul class="leading-loose text-sm lg:text-base lg:text-left text-center">
-            <AnchorSimple text="Servicios" href="/servicios" />
-            <AnchorSimple text="Ubicanos" href="/" />
-            <AnchorSimple text="Contactanos" href="/contactanos" />
+            <Anchor simple text="Servicios" href="/servicios" />
+            <Anchor simple text="Ubicanos" href="/" />
+            <Anchor simple text="Contactanos" href="/contactanos" />
         </ul>
         <ul class="leading-loose text-sm lg:text-base lg:text-left text-center">
-            <AnchorSimple text="Preguntas frecuentes" href="./" />
-            <AnchorSimple text="Terminos y condiciones" href="./" />
-            <AnchorSimple text="Trabaja con nosotros" href="./" />
+            <Anchor simple text="Preguntas frecuentes" href="./" />
+            <Anchor simple text="Terminos y condiciones" href="./" />
+            <Anchor simple text="Trabaja con nosotros" href="./" />
         </ul>
         <a class="mt-5 md:mt-0 lg:p-4 p-3 rounded-2xl hover:scale-105 lg:hover:scale-110 ease-in-out duration-300 text-[#003449] text-sm lg:text-base bg-[#d5eef1] hover:bg-[#acf1bd] active:bg-[#d5eef1]" href="/contactanos">¡Pida su cita ahora!</a>
     </main>
