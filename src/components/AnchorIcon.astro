@@ -2,15 +2,16 @@
 interface Props {
   img: string;
   href: string;
+  alt: string;
 }
-const { img, href } = Astro.props;
+const { img, href, alt } = Astro.props;
 ---
 
 <a href={href}>
   <img
     loading="lazy"
     src=`/img/icons/${img}.svg`
-    alt="icono"
+    alt=`${alt}`
     class="hover:scale-110 hover:animate-ease-in-out duration-200 aspect-square w-10"
   />
 </a>

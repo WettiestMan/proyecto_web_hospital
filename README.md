@@ -105,6 +105,10 @@
 >php artisan db:seed
 >```
 >
+> Algunas funciones de la backend realizan lectura y escritura de datos. Para hacer visible dichos archivos escriba lo siguente en la consola
+> ```
+> php artisan storage:link
+> ```
 >Una vez con las bases de datos creadas y con datos, ejecuta una ventana de línea de comandos y escribe el siguiente
 >comando para levantar el servidor de backend:
 >```
@@ -116,7 +120,10 @@
 >Esto levantará un servidor en ```127.0.0.1:8000``` (o ```localhost:8000```, son lo mismo. También puede que lo
 >levante en un puerto distinto si el puerto 8000 ya está tomado).
 >
->Para recibir datos del backend, ve a ```http://localhost:8000/api/farmacos``` y se mostrará un JSON que puedes
+> Para acceder a las apis de la backend, utiliza la ruta ```http://localhost:8000/api/...```  
+>
+> Por ejemplo:  
+>Para recibir datos del backend acerca de los fármacos, ve a ```http://localhost:8000/api/farmacos``` y se mostrará un JSON que puedes
 >utilizar en Astro con ```fetch(http://localhost:8000/api/farmacos)```
 >
 >![Datos de backend](/public/img/Screenshots/datos.png)
