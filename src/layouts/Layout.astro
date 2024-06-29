@@ -9,11 +9,10 @@ interface Props {
 }
 const { title } = Astro.props;
 ---
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="UTF-8"/>
         <meta
         name="description"
         content="Centro medico parroquial La Trinidad, policlinico integral tanto para adultos como niños. Servicios de Salud con Especialidades Médicas con 26 años de experiencia al servicio del pueblo. Servicios de apoyo al diagnostico como Laboratorio, Electrocardiograma, Ecografias. Terapias de Lenguaje, Aprendizaje, Física. Evaluaciones en Psicología. Programa de Diabéticos e Hipertensos. Tratamiento de pie diabetico, Ulceras vericosas. Odontología. Podología. Farmacia."
@@ -29,21 +28,21 @@ const { title } = Astro.props;
     </head>
     <body>
         <Header/>
-        <!-- <Musica client:load transition:persist/> -->
+        <Musica client:load transition:persist/>
         <main class="mx-5 md:mx-10 lg:mx-20">
             <slot />
         </main>
-        <Footer />
+        <Footer/>
     </body>
 </html>
 
 <style is:global>
     body {
-    font-family: 'Onest Variable',Verdana, Tahoma, system-ui;
+        font-family: 'Onest Variable',Verdana, Tahoma, system-ui;
     }
-    ::-webkit-scrollbar {
-    display: none;
-    }
+    /* ::-webkit-scrollbar {
+        display: none;
+    } */
     p{
         color: #acf1bd;
         text-wrap: pretty;
