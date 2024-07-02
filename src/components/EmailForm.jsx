@@ -83,7 +83,6 @@ function EmailForm() {
                     text: finalText
                 })
             });
-            await res.json();
             
             setIsSubmitting(true);
             setTimeLeft(delay / 1000);
