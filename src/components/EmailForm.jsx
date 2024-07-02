@@ -82,7 +82,9 @@ function EmailForm() {
                     html: finalHtml,
                     text: finalText
                 })
-            })
+            });
+            await res.json();
+            
             setIsSubmitting(true);
             setTimeLeft(delay / 1000);
             formRef.current.reset();

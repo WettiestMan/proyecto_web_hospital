@@ -1,8 +1,8 @@
-import ModalReact from './ModalReact';
-import { getPublicaciones, deletePublicacion } from '@/services/postService';
-import { useState, useEffect } from 'react';
+import PublisForm from './PublisForm';
+import { getPublicaciones, deletePublicacion } from '@/services/postService'
+import { useState, useEffect } from 'react'
 
-const Publicaciones = () => {
+const PublicacionesAdmin = () => {
     const [publis, setPublis] = useState([]);
     const [selectedPubli, setSelectedPubli] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -46,7 +46,7 @@ const Publicaciones = () => {
                 <button onClick={handleModalOpen} className="mt-5 md:mt-0 lg:p-4 p-3 rounded-2xl hover:scale-105 lg:hover:scale-110 ease-in-out duration-300 text-[#003449] text-sm lg:text-base bg-[#d5eef1] hover:bg-[#acf1bd] active:bg-[#d5eef1]">
                     Crear nueva publicación
                 </button>
-                <ModalReact
+                <PublisForm
                     getAllPublicaciones={getAllPublicaciones}
                     selectedPubli={selectedPubli}
                     isModalOpen={isModalOpen}
@@ -65,8 +65,8 @@ const Publicaciones = () => {
                                 <button className='bg-red-600 p-2 rounded-lg' onClick={() => handleDelete(publi.id)}>Eliminar</button>
                             </div>
                         </div>
-                        <img className='h-72 w-auto mx-auto mb-4' src={`http://localhost:8000/storage/${publi.imagen}`} alt={publi.imagen} />
-                        <p>{publi.contenido}</p>
+                        <p className='overflow-hidden'>{publi.contenido}</p>
+                        <img src={`http://localhost:8000/storage/${publi.imagen}`} alt={publi.imagen} />
                     </article>
                 ))
             }
@@ -75,4 +75,4 @@ const Publicaciones = () => {
     )
 }
 
-export default Publicaciones;
+export default PublicacionesAdmin;

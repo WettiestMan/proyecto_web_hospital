@@ -1,10 +1,17 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Publicaciones from "@/components/Publicaciones";
+import PublicacionesAdmin from "@/components/PublicacionesAdmin";
+import CarruselAdmin from "@/components/CarruselAdmin";
 ---
 
-<Layout title="Administracion de publicaciones">
-    <Publicaciones client:load/>
+<Layout title="Administrador">
+    <main>
+        <section>
+            <CarruselAdmin client:load/>
+        </section>
+        <hr class="border-none text-transparent bg-gradient-to-r from-[#003449] h-1 my-8 rounded-3xl"/>
+        <section>
+            <PublicacionesAdmin client:load/>
+        </section>
+    </main>
 </Layout>
-
-
