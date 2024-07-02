@@ -2,14 +2,15 @@
 interface Props {
   href: string;
   text: string;
+  simple?: boolean
 }
-const { href, text } = Astro.props;
+const { href, text, simple } = Astro.props;
 ---
 
 <li>
   <a
     href={href}
-    class="block sm:hover:scale-110 hover:scale-100 ease-in-out duration-300 text-xl hover:text-[#acf1bd] py-2 px-5 rounded-xl hover:bg-[#003449]"
+    class={`ease-in-out duration-300 ${simple ? "hover:text-[#5ac5c3]":"block sm:hover:scale-110 hover:scale-100 text-xl hover:text-[#acf1bd] py-2 px-5 rounded-xl hover:bg-[#003449]"}`}
   >
     {text}
   </a>

@@ -1,32 +1,31 @@
 ---
 import CardServicios from "@/components/CardServicios.astro"
-import CardServicios2 from "@/components/CardServicios2.astro"
 import Layout from "@/layouts/Layout.astro"
 ---
 
 <Layout title="Servicios Complementarios">
     <aside class="absolute w-64 h-full">
         <h2 class="font-bold uppercase bg-[#003449] rounded-l-lg py-4 text-center mb-3 text-white">Contenido</h2>
-        <nav class="">
+        <nav>
             <ul class="flex flex-col">
-                <li class="hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl px-3 py-4"><a href="#Psiologia">Psiologia</a></li>
-                <li class="hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl px-3 py-4"><a href="#Podologia">Podologia</a></li>
-                <li class="hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl px-3 py-4"><a href="#Optometria">Optometria</a></li>
-                <li class="hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl px-3 py-4"><a href="#Terapia Fisica">Terapia Fisica</a></li>
-                <li class="hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl px-3 py-4"><a href="#Terapia de lenguaje">Terapia de lenguaje</a></li>
-                <li class="hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl px-3 py-4"><a href="#Terapia de aprendizaje">Terapia de aprendizaje</a></li>
-                <li class="hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl px-3 py-4"><a href="#Reflexologia Podal">Reflexologia Podal</a></li>
+                <li><a class="block w-full px-3 py-4 hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl" href="#Psiologia" id="#psicologia">Psiologia</a></li>
+                <li><a class="block w-full px-3 py-4 hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl" href="#Podologia" id="#podologia">Podologia</a></li>
+                <li><a class="block w-full px-3 py-4 hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl" href="#Optometria" id="#optometria">Optometria</a></li>
+                <li><a class="block w-full px-3 py-4 hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl" href="#Terapia Fisica" id="#terapia fisica">Terapia Fisica</a></li>
+                <li><a class="block w-full px-3 py-4 hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl" href="#Terapia de lenguaje" id="#terapia de lenguaje">Terapia de lenguaje</a></li>
+                <li><a class="block w-full px-3 py-4 hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl" href="#Terapia de aprendizaje" id="#terapia de aprendizaje">Terapia de aprendizaje</a></li>
+                <li><a class="block w-full px-3 py-4 hover:bg-[#003449] hover:text-[#d5eef1] rounded-l-xl" href="#Reflexologia Podal" id="#reflexologia podal">Reflexologia Podal</a></li>
             </ul>
         </nav>
     </aside>
     <main class="relative ml-64 mt-16 h-screen overflow-auto bg-[#003449] rounded-b-lg rounded-tr-lg border-[#003449] border-[2rem] flex flex-col gap-10">
         <h1 class="uppercase font-black text-[#d5eef1] text-2xl text-center">Servicos Complementarios</h1>
         <CardServicios p="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptas placeat corrupti, odit delectus omnis recusandae iste odio ex quod." servicio="Psicologia" src="/COMPLEMENTARIOS/psicologia.png"/>
-        <CardServicios2 p="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptas placeat corrupti, odit delectus omnis recusandae iste odio ex quod." servicio="Podologia" src="/COMPLEMENTARIOS/podologia.avif"/>
+        <CardServicios p="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptas placeat corrupti, odit delectus omnis recusandae iste odio ex quod." servicio="Podologia" src="/COMPLEMENTARIOS/podologia.avif" variant/>
         <CardServicios p="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptas placeat corrupti, odit delectus omnis recusandae iste odio ex quod." servicio="Optometria" src="/COMPLEMENTARIOS/optometria.jpg"/>
-        <CardServicios2 p="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptas placeat corrupti, odit delectus omnis recusandae iste odio ex quod." servicio="Terapia Fisica" src="/COMPLEMENTARIOS/terapia-fisica.jpg"/>
+        <CardServicios p="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptas placeat corrupti, odit delectus omnis recusandae iste odio ex quod." servicio="Terapia Fisica" src="/COMPLEMENTARIOS/terapia-fisica.jpg" variant/>
         <CardServicios p="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptas placeat corrupti, odit delectus omnis recusandae iste odio ex quod." servicio="Terapia de lenguaje" src="/COMPLEMENTARIOS/terapia-de-lenguaje.jpg"/>
-        <CardServicios2 p="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptas placeat corrupti, odit delectus omnis recusandae iste odio ex quod." servicio="Terapia de aprendizaje" src="/COMPLEMENTARIOS/terapia-de-aprendizaje.png"/>
+        <CardServicios p="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptas placeat corrupti, odit delectus omnis recusandae iste odio ex quod." servicio="Terapia de aprendizaje" src="/COMPLEMENTARIOS/terapia-de-aprendizaje.png" variant/>
         <CardServicios p="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptas placeat corrupti, odit delectus omnis recusandae iste odio ex quod." servicio="Reflexologia Podal" src="/COMPLEMENTARIOS/reflexologia-podal.jpg"/>
     </main>
 </Layout>
