@@ -70,7 +70,7 @@ function EmailForm() {
         );
 
         try {
-            const res = await fetch("/api/sendEmail.json", {
+            await fetch("/api/sendEmail.json", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -141,7 +141,7 @@ function EmailForm() {
                 </div>
                     <button className={`flex items-center justify-center rounded-xl font-bold max-sm:w-full text-[#acf1bd] w-[100px] h-[35px] mx-auto ${isSubmitting ? "bg-[#00a85a] text-white" : "bg-[#003449]"} `}>
                         <span className={`mx-auto ${isLoading ? "hidden" : ""}`}>{!isSubmitting ? "Enviar" : `Enviado`}</span>
-                        <img src="/img/carg.svg" className={`h-[24px] mx-auto ${isLoading ? "" : "hidden"}`} />
+                        <img src="/img/carg.svg" alt="icono de carga" className={`h-[24px] mx-auto ${isLoading ? "" : "hidden"}`} />
                     </button>
                     {isSubmitting && !isLoading && <div className="text-center mt-2">Puedes enviar otro formulario en {Math.ceil(timeLeft)} segundos</div>}
             </fieldset>
