@@ -4,6 +4,7 @@ use App\Http\Controllers\FarmacosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicacionesController;
+use App\Http\Controllers\CarruselImagenesController;
 use App\Http\Controllers\UserController;
 
 /*Route::get('/user', function (Request $request) {
@@ -13,6 +14,12 @@ use App\Http\Controllers\UserController;
 // Para los fármacos
 Route::get('farmacos', [FarmacosController::class, 'index'])->name('farmacos.index');
 Route::get('farmacos/{id}', [FarmacosController::class, 'show'])->name('farmacos.show');
+
+Route::get('carruselimagenes', [CarruselImagenesController::class, 'index']);
+Route::get('carruselimagenes/{id}', [CarruselImagenesController::class, 'show']);
+Route::post('carruselimagenes', [CarruselImagenesController::class, 'store']);
+Route::put('carruselimagenesupdate/{id}', [CarruselImagenesController::class, 'update']);
+Route::delete('carruselimagenesdelete/{id}', [CarruselImagenesController::class, 'destroy']);
 
 // Para las publicaciones
 Route::get('publicaciones', [PublicacionesController::class, 'index']);
