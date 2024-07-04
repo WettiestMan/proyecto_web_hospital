@@ -1,0 +1,78 @@
+---
+import Layout from "@/layouts/Layout.astro"
+---
+
+<Layout title="Inicio de sesión | Administrador de publicaciones">
+    <form id="loginForm">
+        <label for="usuario">Nombre de usuario</label>
+        <input type="text" placeholder="Ingrese su nombre de usuario" id="usuario" spellcheck="false" required>
+
+        <label for="contrasena">Contraseña</label>
+        <input type="password" placeholder="Ingrese su contraseña" id="contrasena" spellcheck="false" required>
+
+        <button type="submit" id="iniciarSesion">Iniciar sesión</button>
+        <p class="invisible text-red-500" id="sesionIncorrecta">
+            Inicio de sesión incorrecto, revise sus credenciales e intente de nuevo.
+        </p>
+        <p class="invisible text-red-500" id="errorInicioSesion">
+            Hubo un error al tratar de iniciar sesión, inténtelo de nuevo más tarde.
+        </p>
+    </form>
+    <script>
+        document.addEventListener('astro:page-load', () => {
+            
+            const form = {
+                usr: document.querySelector('#usuario') as HTMLInputElement,
+                contra: document.querySelector('#contrasena') as HTMLInputElement,
+                enviar: document.querySelector('#iniciarSesion') as HTMLElement
+            };
+
+            const btn = form.enviar?.addEventListener('click', (evt) =>{
+                evt.preventDefault()
+
+                const requestInfo = new Request(
+                    'http://localhost:8000/api/auth-posts',
+                    {
+                        method: 'POST',
+                        headers:{
+                            Accept: "application/json, text/plain, */*",
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            name: form.usr.value,
+                            password: form.contra.value
+                        })
+                    }
+                );
+
+                fetch(requestInfo)
+                .then((response) => {
+                    if(response.ok)
+                        return response.json();
+
+                    switch(response.status) {
+                        case 401:
+                            document.getElementById('sesionIncorrecta')?.classList.remove('invisible');
+                            document.getElementById('errorIniciarSesion')?.classList.add('invisible');
+                            break;
+                        default: // Manejar 500 y otros códigos inesperados
+                            document.getElementById('sesionIncorrecta')?.classList.add('invisible');
+                            document.getElementById('errorIniciarSesion')?.classList.remove('invisible');
+                    }
+
+                    return null;
+                })
+                .then((data) => {
+                    if(data !== null){
+                        console.log(data);
+                        window.location.href = 'admin';
+                    }
+                })
+                .catch((ex) =>{
+                    document.getElementById('sesionIncorrecta')?.classList.add('invisible');
+                    document.getElementById('errorIniciarSesion')?.classList.remove('invisible');
+                })
+            });
+        });
+    </script>
+</Layout>
