@@ -49,11 +49,18 @@ const CarruselForm = ({getAllImagenes}) => {
                         type="file"
                         name="imagen"
                         className="mt-1 block w-full p-2 border rounded"
+                        required
                     />
                 </div>
                 <div className='mb-4'>
                     <label htmlFor="alt" className='block text-sm font-medium text-gray-700'>Texto alternativo</label>
-                    <input onChange={(e) => setAlt(e.target.value)} value={alt}  type="text" name="alt" className="mt-1 block w-full p-2 border rounded"/>
+                    <input
+                        onChange={(e) => setAlt(e.target.value)}
+                        type="text"
+                        name="alt"
+                        value={alt}
+                        className="mt-1 block w-full p-2 border rounded"
+                        required/>
                 </div>
                 <button type="submit" className='px-4 py-2 bg-blue-600 text-white rounded'>Agregar Imagen</button>
             </form>
