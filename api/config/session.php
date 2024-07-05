@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'array'),  // anteriormente 'database', pero si voy a realizar un solo usuario
+    'driver' => env('SESSION_DRIVER', 'database'),  // anteriormente 'database', pero si voy a realizar un solo usuario
                                                     // para el admin de publicaciones y espero unas pocas sesiones abiertas,
                                                     // puede que sea un poco demasiado.
 
