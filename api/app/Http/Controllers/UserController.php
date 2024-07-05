@@ -18,9 +18,9 @@ class UserController extends Controller
     public function create(Request $request){
         try{
             if(isset($request->name, $request->password)){
-                User::factory()->create([
-                    'usuario' => $request->name,
-                    'contrasena' => $request->password
+                $nuevoUsuario = User::factory()->create([
+                    'username' => $request->name,
+                    'password' => bcrypt($request->password)
                 ]);
 
                 return new JsonResponse([
@@ -50,15 +50,24 @@ class UserController extends Controller
                 ], 401);
             }
 
-            $coincidencia = User::query()->where('usuario', $request->name)->first();
+            /*$coincidencia = User::query()->where('usuario', $request->name)->first();
 
             file_put_contents('./../../../log.txt', $request->name, FILE_APPEND);
             file_put_contents('./../../../log.txt', Hash::make($request->password), FILE_APPEND);
-            file_put_contents('./../../../log.txt', $coincidencia, FILE_APPEND);
+            file_put_contents('./../../../log.txt', $coincidencia, FILE_APPEND);*/
+            $credenciales = [
+                'username' => $request->name,
+                'password' => $request->password
+            ];
 
-            if($coincidencia !== null && Hash::check($request->password, $coincidencia->password)) {
+            file_put_contents('./../../../log.txt', $credenciales, FILE_APPEND);
+
+            if(Auth::attempt($credenciales)) {
+                file_put_contents('./../../../log.txt', '(1)', FILE_APPEND);
                 $request->session()->regenerate();
+                file_put_contents('./../../../log.txt', '(2)', FILE_APPEND);
                 $sessionid = $request->session()->getId();
+                file_put_contents('./../../../log.txt', '(3)', FILE_APPEND);
 
                 $respuesta = new JsonResponse([
                     'loggedIn' => 1,
